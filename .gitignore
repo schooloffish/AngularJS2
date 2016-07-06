@@ -1,0 +1,4 @@
+angular2-quickstart\node_modules
+angular2-quickstart\typings
+*.js
+*.js.map
