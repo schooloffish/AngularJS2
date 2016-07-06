@@ -1,12 +1,14 @@
 /**
  * Created by liuxun on 7/6/2016.
  */
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import {Hero} from './hero';
+import {ActivatedRoute} from '@angular/router';
+import {HeroService} from './hero.service';
 
 @Component({
     selector: 'my-hero-detail',
-    template:`
+    template: `
         <div *ngIf="hero">
             <h2>
                 {{hero.name}} details!
@@ -16,10 +18,27 @@ import {Hero} from './hero';
                 <label>name:</label>
                 <input [(ngModel)]="hero.name" placeholder="name" />
             </div>
+        <button (click)="goBack()">Back</button>
         </div>
     `
 })
-export class HeroDetailComponent{
-    @Input()
+export class HeroDetailComponent implements OnInit,OnDestroy{
     hero:Hero;
+    sub:any;
+    constructor(private heroService:HeroService,
+                private route:ActivatedRoute) {
+    }
+    ngOnInit(){
+        this.sub=this.route.params.subscribe(params=>{
+            let id=+params['id'];
+            this.heroService.getHero(id).then(hero=>this.hero=hero);
+        });
+    }
+    ngOnDestroy(){
+        this.sub.unsubscribe();
+    }
+
+    goBack() {
+        window.history.back();
+    }
 }
