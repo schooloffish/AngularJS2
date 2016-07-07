@@ -13,8 +13,9 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
              <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
             <router-outlet></router-outlet>
             `,
-    directives: [ROUTER_DIRECTIVES],
-    providers: [HeroService]
+        styleUrls:['app/app.component.css'],
+        directives: [ROUTER_DIRECTIVES],
+        providers: [HeroService]
     }
 )
 export class AppComponent {
