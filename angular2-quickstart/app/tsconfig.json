@@ -1,0 +1,634 @@
+{
+  "SubdivisionIds": [
+    2,
+    3
+  ],
+  "AdministrationTabDefaultPanel": {
+    "heading": "Subordinate Filtering",
+    "type": "SubordinateFiltering",
+    "template": "<panel-subordinate-filtering></panel-subordinate-filtering>"
+  },
+  "OptionState": {
+    "ApproveOptionState": "enabled",
+    "CloseOptionState": "disabled",
+    "DashboardOptionState": "enabled",
+    "FilterOptionState": "enabled",
+    "QcOptionState": "enabled",
+    "ReopenOptionState": "disabled"
+  },
+  "StateChangedDialog": {
+    "CommentFromTextArea": true,
+    "CommentMaxLength": 500,
+    "NumQcRequiredChecks": 1,
+    "QcMessage": "Please contact the locator immediately to correct the work order.",
+    "ShowQcDialog": 1,
+    "ShowQcDialogCommentTextArea": 1,
+    "qcReasons": [
+      {
+        "value": 28,
+        "checked": false,
+        "text": "Markings do not match the entire scope of work order"
+      },
+      {
+        "value": 29,
+        "checked": false,
+        "text": "Not all member utilities accounted for"
+      },
+      {
+        "value": 30,
+        "checked": false,
+        "text": "High Profile utility not noted"
+      },
+      {
+        "value": 31,
+        "checked": false,
+        "text": "Incorrect area or address marked"
+      },
+      {
+        "value": 32,
+        "checked": false,
+        "text": "Manifest does not appear to have been created on-site"
+      }
+    ]
+  },
+  "InstrumentationEnabled": 1,
+  "Map": {
+    "MapengineManagerUrl": "https://mapengine-qa.thinkgeotest.com/Scripts/CertusView/CvMapManager.js"
+  },
+  "PAR": {
+    "RiskBlockSections": [
+      {
+        "name": "Pre-Locate",
+        "score": "prelocate_score",
+        "dataConfig": [
+          {
+            "name": "Excavator Score",
+            "actual": "prelocate_score_excavator"
+          },
+          {
+            "name": "Facility Score",
+            "actual": "prelocate_score_facility"
+          }
+        ]
+      },
+      {
+        "name": "Post-Locate",
+        "score": "postlocate_score",
+        "dataConfig": [
+          {
+            "name": "Locator Score",
+            "actual": "postlocate_score_locator"
+          },
+          {
+            "name": "Sketch Score",
+            "actual": "postlocate_score_sketch"
+          },
+          {
+            "name": "Locator Damage Score",
+            "actual": "postlocate_score_locator_damage"
+          }
+        ]
+      }
+    ],
+    "RiskBlockPanel": [
+      {
+        "name": "Pre-Locate",
+        "dataConfig": [
+          {
+            "name": "Pre-Locate Score",
+            "actual": "prelocate_score"
+          },
+          {
+            "name": "Pre-Locate Excavator Score",
+            "actual": "prelocate_score_excavator"
+          },
+          {
+            "name": "Pre-Locate Facility Score",
+            "actual": "prelocate_score_facility"
+          }
+        ],
+        "facilityConfig": {
+          "name": "Facilities In Scope",
+          "value": "facilities",
+          "dataConfig": {
+            "ID": "facility_id",
+            "Facility Pressure": "facility_pressure",
+            "Facility Attribute": "facility_attribute",
+            "Longitude": "facility_center_longitude",
+            "Latitude": "facility_center_latitude"
+          }
+        }
+      },
+      {
+        "name": "Post-Locate",
+        "dataConfig": [
+          {
+            "name": "Post-Locate Score",
+            "actual": "postlocate_score"
+          },
+          {
+            "name": "Post-Locate Locator Score",
+            "actual": "postlocate_score_locator"
+          },
+          {
+            "name": "Post-Locate Sketch Score",
+            "actual": "postlocate_score_sketch"
+          },
+          {
+            "name": "Post-Locate Locator Damage Score",
+            "actual": "postlocate_score_locator_damage"
+          }
+        ],
+        "facilityConfig": {
+          "name": "Facilities Not Sketched",
+          "value": "facilities_not_sketched",
+          "dataConfig": {
+            "ID": "facility_id",
+            "Facility Pressure": "facility_pressure",
+            "Facility Attribute": "facility_attribute",
+            "Longitude": "facility_center_longitude",
+            "Latitude": "facility_center_latitude"
+          }
+        }
+      }
+    ],
+    "PreScoreStopLightConfig": {
+      "redLight": [
+        0,
+        50
+      ],
+      "yellowLight": [
+        50,
+        80
+      ],
+      "greenLight": [
+        80,
+        100
+      ]
+    },
+    "PostScoreStopLightConfig": {
+      "redLight": [
+        0,
+        50
+      ],
+      "yellowLight": [
+        50,
+        80
+      ],
+      "greenLight": [
+        80,
+        100
+      ]
+    }
+  },
+  "Ribbon": {
+    "ActiveTab": "review",
+    "AdministrationRibbonItemLayout": [
+      {
+        "name": "fieldCheck.admin.subordinate.filtering",
+        "position": "left"
+      }
+    ],
+    "ReportRibbonItemLayout": [
+      {
+        "name": "fieldCheck.reports",
+        "position": "left"
+      }
+    ],
+    "ReviewRibbonItemLayout": [
+      {
+        "name": "fieldCheck.review.count",
+        "position": "left"
+      },
+      {
+        "name": "review.decisionsGroup",
+        "position": "right"
+      },
+      {
+        "name": "separator",
+        "position": "right"
+      },
+      {
+        "name": "review.toolsGroup",
+        "position": "right"
+      }
+    ],
+    "Definition": [
+      {
+        "name": "file",
+        "title": "File",
+        "disabled": true,
+        "isCollapsed": false,
+        "type": "tab"
+      },
+      {
+        "name": "search",
+        "title": "Search",
+        "disabled": true,
+        "isCollapsed": false,
+        "state": "eSketch.search",
+        "type": "tab"
+      },
+      {
+        "name": "fieldCheck.review.count",
+        "template": "<counts></counts>",
+        "title": ""
+      },
+      {
+        "name": "search.searchBox",
+        "template": "<search></search>",
+        "title": ""
+      },
+      {
+        "name": "draw",
+        "title": "Draw",
+        "disabled": true,
+        "isCollapsed": false,
+        "state": "eSketch.main",
+        "type": "tab"
+      },
+      {
+        "name": "symbols",
+        "title": "Symbols",
+        "disabled": true,
+        "isCollapsed": false,
+        "state": "eSketch.main",
+        "type": "tab"
+      },
+      {
+        "name": "options",
+        "title": "Options",
+        "disabled": true,
+        "isCollapsed": false,
+        "state": "eSketch.main",
+        "type": "tab"
+      },
+      {
+        "name": "review",
+        "title": "Review",
+        "disabled": false,
+        "isCollapsed": false,
+        "state": "fieldCheck.dashboard",
+        "type": "tab"
+      },
+      {
+        "name": "reports",
+        "title": "Reports",
+        "disabled": false,
+        "isCollapsed": false,
+        "state": "fieldCheck.reports",
+        "type": "tab"
+      },
+      {
+        "name": "administration",
+        "title": "Administration",
+        "disabled": false,
+        "isCollapsed": true,
+        "state": "fieldCheck.admin",
+        "type": "tab"
+      },
+      {
+        "name": "right-collapse-bar-field-check",
+        "class": "tab-bar-icon glyphicon",
+        "dynamicClass": {
+          "true": "glyphicon-chevron-up",
+          "false": "glyphicon-chevron-down"
+        },
+        "dynamicValue": true,
+        "type": "tab"
+      },
+      {
+        "name": "right-toggle",
+        "class": "tab-bar-icon",
+        "template": "<popup-button></popup-button>",
+        "type": "tab"
+      },
+      {
+        "name": "right-greeting",
+        "title": "Welcome ",
+        "class": "tab-bar-icon",
+        "type": "tab"
+      },
+      {
+        "name": "right-print",
+        "icon": "assets/images/icons/file/printer.png",
+        "class": "tab-bar-icon"
+      },
+      {
+        "name": "right-logoff",
+        "icon": "assets/images/icons/file/logoff.png",
+        "class": "tab-bar-icon"
+      },
+      {
+        "name": "separator",
+        "template": "<div class=\"ribbon-group-divider right\"></div>",
+        "title": ""
+      },
+      {
+        "name": "blank",
+        "template": "<div style=\"width: 32 px;height: 86 px;\"> < /div>",
+        "title": " "
+      },
+      {
+        "name": "blankBlock",
+        "blockItems": [
+          "blank"
+        ],
+        "title": " "
+      },
+      {
+        "name": "fieldCheck.review.approve",
+        "disabled": true,
+        "icon": "assets/images/icons/review/thumbsup.png",
+        "title": "Approve",
+        "isCollapsed": false,
+        "state": "fieldCheck.workOrder",
+        "class": "ribbon-icon-yellow-hover"
+      },
+      {
+        "name": "fieldCheck.review.qualityControl",
+        "disabled": true,
+        "icon": "assets/images/icons/review/quality_check.png",
+        "title": "Quality Control",
+        "isCollapsed": false,
+        "state": "fieldCheck.workOrder",
+        "class": "ribbon-icon-yellow-hover"
+      },
+      {
+        "name": "fieldCheck.review.filter",
+        "disabled": false,
+        "icon": "assets/images/icons/review/filter_data.png",
+        "title": "Filter",
+        "isCollapsed": false,
+        "state": "fieldCheck.search",
+        "class": "ribbon-icon-yellow-hover"
+      },
+      {
+        "name": "fieldCheck.review.dashboard",
+        "disabled": false,
+        "icon": "assets/images/icons/review/User-icon.png",
+        "title": "Dashboard",
+        "isCollapsed": false,
+        "state": "fieldCheck.dashboard",
+        "class": "ribbon-icon-yellow-hover"
+      },
+      {
+        "name": "review.decisionsGroup",
+        "isCollapsed": false,
+        "blockItems": [
+          "fieldCheck.review.approve",
+          "fieldCheck.review.qualityControl"
+        ],
+        "title": "Decisions",
+        "class": "right"
+      },
+      {
+        "name": "review.toolsGroup",
+        "blockItems": [
+          "fieldCheck.review.filter",
+          "fieldCheck.review.dashboard"
+        ],
+        "title": "Tools",
+        "class": "right"
+      },
+      {
+        "name": "fieldCheck.admin.subordinate.filtering",
+        "disabled": true,
+        "icon": "assets/images/icons/review/quality_check.png",
+        "title": "Subordinate Filtering",
+        "isCollapsed": false,
+        "state": "fieldCheck.admin",
+        "class": "ribbon-icon-yellow-hover"
+      },
+      {
+        "name": "fieldCheck.reports",
+        "disabled": true,
+        "icon": "assets/images/icons/review/quality_check.png",
+        "title": "Reports",
+        "isCollapsed": false,
+        "state": "fieldCheck.admin",
+        "class": "ribbon-icon-yellow-hover"
+      }
+    ]
+  },
+  "ReportServiceUrl": "https://dyatl-djasas01.dynutil.com:8443/jasperserver-pro/login.html",
+  "Search": {
+    "ApprovedCheckboxState": "enabled",
+    "BoxHelpText": "Search by Work Order Number",
+    "ClosedCheckboxState": "enabled",
+    "QcCompleteCheckboxState": "enabled",
+    "StateDropdownState": "enabled",
+    "ShowSearchDateFilter": 0,
+    "ResultTableExtensionDataColumns": {
+      "Work Order Id": "WorkOrderId",
+      "Work Type": "JobType",
+      "State": "StateCode",
+      "Work Order Closed Date": "ClosedDate",
+      "Closed By": "ClosedBy",
+      "Data Source": "SubdivisionName"
+    }
+  },
+  "SearchDefaultZoomLevel": 18,
+  "ShowWelcomeMessage": 1,
+  "StartPageUrl": "/fieldCheck/dashboard",
+  "SubordinatesPanel": {
+    "Heading": "Subordinates Panel",
+    "FilterTimeoutBeforeAjaxCall": 1000,
+    "Show": 1
+  },
+  "WorkCompleted": {
+    "DashboardFiltering": {
+      "enabled": false
+    },
+    "PanelExtensionDataLabels": {
+      "dataMapping": {
+        "TenantClientColor": "",
+        "TenantClientName": "Name",
+        "TenantStatus": "Status",
+        "TenantType": "Type",
+        "TenantLocation": "Location",
+        "TenantHighProfile": "HighProfile"
+      },
+      "formatterConfig": {
+        "TenantClientColor": {
+          "formatterName": "setTdColor"
+        },
+        "TenantHighProfile": {
+          "formatterName": "highlight"
+        }
+      }
+    },
+    "PanelHeading": "Clients",
+    "SidebarExtensionDataLabels": {
+      "dataMapping": {
+        "TenantClientColor": "",
+        "TenantClientName": "Name",
+        "TenantShortStatus": "Status",
+        "TenantHighProfile": " "
+      },
+      "formatterConfig": {
+        "TenantClientColor": {
+          "formatterName": "setTdColor"
+        },
+        "TenantHighProfile": {
+          "formatterName": "highlight"
+        }
+      }
+    },
+    "SidebarHeading": "CLIENTS"
+  },
+  "WorkOrder": {
+    "Heading": {
+      "label": "Work Order",
+      "field": "workOrderNumber"
+    },
+    "PanelExtensionDataLabels": {
+      "dataMapping": {
+        "ClosedBy": "Closed By",
+        "Location": "Lat/Long",
+        "JobType": "Work Type",
+        "ConName": "Contractor",
+        "Company": "Done For",
+        "Address": "Address",
+        "CountyName": "County",
+        "WorkDate": "Arrival Date",
+        "ClosedDate": "Closed Date",
+        "DueDate": "Legal Due Date",
+        "ReviewDueDate": "Review Date",
+        "ReviewAge": "Review Age",
+        "MapPageNumber": "Map Page",
+        "Cross": "Cross",
+        "Remarks": "Remarks",
+        "WorkStatus": "Work Status"
+      },
+      "formatterConfig": {
+        "Location": {
+          "formatterName": "generateLink",
+          "parameters": {
+            "linkFunctionName": "showMapPanelForce",
+            "linkFunction": ""
+          }
+        },
+        "WorkDate": {
+          "formatterName": "formatDate",
+          "parameters": {
+            "defaultFormat": "MM/DD/YYYY hh:mm a",
+            "shortFormat": "MM/DD/YYYY"
+          }
+        },
+        "ClosedDate": {
+          "formatterName": "formatDate",
+          "parameters": {
+            "defaultFormat": "MM/DD/YYYY hh:mm a",
+            "shortFormat": "MM/DD/YYYY"
+          }
+        },
+        "DueDate": {
+          "formatterName": "formatDate",
+          "parameters": {
+            "defaultFormat": "MM/DD/YYYY hh:mm a",
+            "shortFormat": "MM/DD/YYYY"
+          }
+        },
+        "ReviewDueDate": {
+          "formatterName": "formatDate",
+          "parameters": {
+            "defaultFormat": "MM/DD/YYYY hh:mm a",
+            "shortFormat": "MM/DD/YYYY"
+          }
+        }
+      }
+    },
+    "SidebarExtensionDataLabels": {
+      "dataMapping": {
+        "ClosedBy": "Closed By",
+        "Location": "Lat/Long",
+        "JobType": "Work Type",
+        "ConName": "Contractor",
+        "Company": "Done For",
+        "Address": "Address",
+        "CountyName": "County",
+        "DueDate": "Legal Due Date"
+      },
+      "formatterConfig": {
+        "Location": {
+          "formatterName": "generateLink",
+          "parameters": {
+            "linkFunctionName": "showMapPanelForce",
+            "linkFunction": ""
+          }
+        },
+        "DueDate": {
+          "formatterName": "formatDate",
+          "parameters": {
+            "defaultFormat": "MM/DD/YYYY hh:mm a",
+            "shortFormat": "MM/DD/YYYY"
+          }
+        }
+      }
+    },
+    "ShowWoAddDetailsPanel": 1,
+    "ShowWoHistoryPanel": 1,
+    "ShowWoQualityScorePanel": 1,
+    "ShowWoStoplight": 1,
+    "ShowWoWorkCompletedPanel": 1,
+    "ShowWoWorkOrderPanel": 1,
+    "ShowWoRiskPanel": 1
+  },
+  "WorkOrderHistoryPanelDataLabels": {
+    "dataMapping": {
+      "LastUpdateTimestamp": "Date",
+      "Action": "Action",
+      "LastName": "Last Name",
+      "FirstName": "First Name"
+    },
+    "formatterConfig": {
+      "LastUpdateTimestamp": {
+        "formatterName": "formatDate",
+        "parameters": {
+          "defaultFormat": "MM/DD/YYYY hh:mm a",
+          "shortFormat": "MM/DD/YYYY"
+        }
+      }
+    }
+  },
+  "WorkOrderSummaryPanel": {
+    "ExtensionDataLabels": [
+      [
+        {
+          "label": "Work Order Number",
+          "field": "workOrderNumber"
+        },
+        {
+          "label": "Worker",
+          "field": "worker"
+        }
+      ],
+      [
+        {
+          "label": "Due Date",
+          "field": "dueDate"
+        },
+        {
+          "label": "Closed Date",
+          "field": "closedDate"
+        }
+      ]
+    ],
+    "ExtensionDataSortedLabel": "Due Date",
+    "DateFormat": "MMM Do YYYY hh:mm:ss a"
+  },
+  "WorkOrderPhoto": {
+    "PanelExtensionDataLabels": {
+      "Photo Subject": "TenantPhotoSubject",
+      "Upload Time": "UploadedTimestamp",
+      "Photo Comments": "TenantPhotoComments"
+    },
+    "MagnifierSizeInPx": 260,
+    "ShowWoImagesPanel": 1,
+    "EnableImageThumbnails": false,
+    "isShowImageBalloons": false,
+    "isShowSecondImagePanel": true
+  },
+  "UseHardCodedPARId": true
+}
