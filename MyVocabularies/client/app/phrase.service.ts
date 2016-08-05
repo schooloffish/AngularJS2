@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Headers,Http} from '@angular/http';
 
 @Injectable()
 export class PhraseService{
@@ -6,7 +7,7 @@ export class PhraseService{
     constructor(private http:Http){
 
     }
-    getPhrases(){
-        this.http.get(this.phraseUrl).toPromise().then(response=>response.json())
+    getPhrase(){
+        return this.http.get(this.phraseUrl).toPromise().then(response=>response.json());
     }
 }

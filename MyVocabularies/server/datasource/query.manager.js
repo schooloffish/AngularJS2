@@ -8,8 +8,8 @@ var workQueue = [];
 var connectionString;
 
 var queryCache = {
-    UpdateWorkOrderStatus: {
-        text: 'UPDATE work_order SET work_order_status_id=$status,last_update_user_id=$userName,last_update_timestamp=now() WHERE work_order_id=$workOrderId;'
+    GetARandomPhrase: {
+        text: 'SELECT * FROM phrase ORDER BY RAND() LIMIT 1;'
     },
     InsertWorkOrderHistoryWithoutComment: {
         text: 'INSERT INTO work_order_history (work_order_id,user_id,action,last_update_timestamp,screen_shot_key) VALUES ($workOrderId,$userId,$action,now(),$screenShotKey) RETURNING work_order_history_id;'
@@ -37,15 +37,12 @@ var queryCache = {
     },
     GetReopenComments: {
         text: 'SELECT reopen_comment_Id as id,description as description FROM reopen_comment;'
-    },
-    GetWorkflowComment: {
-        source: 'SQL/get.workflow.comment.sql'
     }
 };
 
 function initCache(connString) {
-    connectionPool = mysql.createPool(mrsDatabaseConnection);
-    connectionPool.config.queryTimeout = mrsDatabaseConnection.options.requestTimeout;
+    connectionPool = mysql.createPool(connString);
+    connectionPool.config.queryTimeout = connString.options.requestTimeout;
     connectionPool.config.connectionConfig.queryFormat = function (query, values) {
         if (!values) return query;
         return query.replace(/\@(\w+)/g, function (txt, key) {
@@ -69,7 +66,6 @@ function initCache(connString) {
 }
 
 function executor(query, parameters, preQueryBindings, callback) {
-    //logger.debug("query pushed to workQueue - Query = " + query.text.toString().replace('\n', ''));
     workQueue.push({query: query, parameters: parameters, binding: preQueryBindings, callback: callback});
 
     executionSerializer();
@@ -100,11 +96,9 @@ function executionSerializer() {
             });
         }
         var parameterString = queryText + '\r\n' + 'SQL Parameters:' + JSON.stringify(parameters);
-        var queryTimer = logger.queryTimer(query.source, parameterString);
         connectionPool.getConnection(function (err, connection) {
             if (!_.isUndefined(err) && !_.isNull(err)) {
-                logger.error('MRS Connection Error: %s', err.toString());
-                logger.error(err.stack);
+                console.log('Error: %s',err.toString());
                 executionSerializer();
                 queryTimer.finish();
                 return callback(err);
@@ -118,10 +112,8 @@ function executionSerializer() {
                 connection.release();
                 executionSerializer();
                 if (!_.isUndefined(err) && !_.isNull(err)) {
-                    logger.error('MRS SQL Error: %s', err.toString());
+                    console.log('Error: %s',err.toString());
                 }
-                //logger.debug("query complete - Query = " + queryText);
-                queryTimer.finish();
                 return callback(err, rows, fields);
             });
         });
