@@ -100,7 +100,6 @@ function executionSerializer() {
             if (!_.isUndefined(err) && !_.isNull(err)) {
                 console.log('Error: %s',err.toString());
                 executionSerializer();
-                queryTimer.finish();
                 return callback(err);
             }
 
