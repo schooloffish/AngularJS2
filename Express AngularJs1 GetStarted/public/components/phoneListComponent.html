@@ -1,0 +1,11 @@
+<div>
+    <input type="text" ng-model="$ctrl.filter">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="phone in $ctrl.phones|filter: $ctrl.filter">
+            name:
+            <a href="#/phones/{{phone.id}}">
+             {{phone.name}}</a>
+            <p>price: {{phone.price}}</p>
+        </li>
+    </ul>
+</div>
