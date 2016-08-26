@@ -1,18 +1,11 @@
 var express = require('express');
 var app = express();
-var apiRouter = express.Router();
+var apiRouter = require('./apiRouter.js');
 
 app.use(express.static('public'));
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
 
 app.get('/index', function (req, res) {
     res.sendFile('index.html');
-});
-
-apiRouter.get('/phones', function (req, res) {
-    return res.json([{ name: 'iPhone 6', price: 2000, id: 1 }, { name: 'iPhone 4', price: 800, id: 2 }]);
 });
 
 app.use('/api/v1', apiRouter);

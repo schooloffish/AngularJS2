@@ -4,7 +4,8 @@
         <li class="list-group-item" ng-repeat="phone in $ctrl.phones|filter: $ctrl.filter">
             name:
             <a href="#/phones/{{phone.id}}">
-             {{phone.name}}</a>
+             {{phone.name}}</a>            
+            <img src="{{phone.image}}" alt="">
             <p>price: {{phone.price}}</p>
         </li>
     </ul>

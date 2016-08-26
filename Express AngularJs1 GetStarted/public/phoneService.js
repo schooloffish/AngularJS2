@@ -11,7 +11,20 @@ function phoneService($q, $http) {
             });
         });
     }
+
+    function getPhoneById(id) {
+        return $q(function (resolve, reject) {
+            $http.get('api/v1/phone/' + id).then(function successCallback(response) {
+                resolve(response.data);
+            }, function errorCallback(response) {
+                reject();
+                console.log('Failed to get phone %s', id);
+            });
+        });
+    }
+
     return {
-        getPhones: getPhones
+        getPhones: getPhones,
+        getPhoneById: getPhoneById
     }
 }
