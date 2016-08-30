@@ -18,7 +18,7 @@ queryManager.init({
     user: 'admin',
     password: '123456',
     multipleStatements: true,
-    database:'MyVocabularies',
+    database: 'MyVocabularies',
     options: {
         requestTimeout: 60
     }
@@ -27,6 +27,11 @@ queryManager.init({
 require('./rest/phrase.js').addRouters(router, queryManager);
 
 app.use('/api/v1', router);
+
+//handle 404, to fix angular2 router and express router conflicts
+app.use('*', function (req, res) {
+    res.sendFile('index.html', { root: clientFolder });
+});
 
 
 app.listen(3000, function (params) {
