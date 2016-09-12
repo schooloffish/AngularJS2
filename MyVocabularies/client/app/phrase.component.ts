@@ -18,10 +18,9 @@ export class PhraseComponent {
         this.showMeaning = false;
     }
     ngOnInit() {
-        let that = this;
-        this.phraseService.getPhrase().subscribe(function (data) {
-            that.phrase = data[0];
-            that.play();
+        this.phraseService.getPhrase().subscribe(data=> {
+            this.phrase = data[0];
+            this.play();
         });
     }
 
