@@ -6,8 +6,8 @@ var util = require('util');
 var xml2json = require('simple-xml2json');
 
 var connection = mysql.createConnection({
-    host: '192.168.0.117',
-    user: 'admin',
+    host: 'localhost',
+    user: 'root',
     password: '123456',
     multipleStatements: true
 });

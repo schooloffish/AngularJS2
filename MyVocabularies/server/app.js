@@ -14,8 +14,8 @@ app.get('/', function (req, res) {
 var router = express.Router();
 var queryManager = require('./datasource/query.manager.js').manager;
 queryManager.init({
-    host: '192.168.0.117',
-    user: 'admin',
+    host: 'localhost',
+    user: 'root',
     password: '123456',
     multipleStatements: true,
     database: 'MyVocabularies',

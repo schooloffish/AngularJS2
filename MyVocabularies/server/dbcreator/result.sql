@@ -6,9 +6,9 @@ use `MyVocabularies`;
 
 CREATE TABLE phrase(
 `phrase_id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'phrase Id of each phrase',
-`phrase` VARCHAR(45) NOT NULL COMMENT 'phrase we would like to remember',
-`phonetic` VARCHAR(45) NOT NULL COMMENT 'prounciation of phrase',
-`meaning` VARCHAR(45) NOT NULL COMMENT 'meaning of phrase',
+`phrase` VARCHAR(100) NOT NULL COMMENT 'phrase we would like to remember',
+`phonetic` VARCHAR(100) NOT NULL COMMENT 'prounciation of phrase',
+`meaning` VARCHAR(1000) NOT NULL COMMENT 'meaning of phrase',
 `correctness` INT NULL COMMENT 'To store how many times you remember correctly this phrase',
 `incorrectness` INT NULL COMMENT 'To store how many times you remember incorrectly this phrase',
 `last_update_timestamp` DATETIME NOT NULL COMMENT 'time the row was last updated.',

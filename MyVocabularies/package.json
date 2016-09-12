@@ -2,13 +2,14 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./server/app.js"    
+    "start": "node ./server/app.js"
   },
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
     "lodash": "^4.14.0",
-    "mysql": "^2.11.1"
+    "mysql": "^2.11.1",
+    "simple-xml2json": "^1.2.3"
   },
   "devDependencies": {
     "concurrently": "^2.0.0"

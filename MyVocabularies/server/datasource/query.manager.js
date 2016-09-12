@@ -99,7 +99,7 @@ function executionSerializer() {
         connectionPool.getConnection(function (err, connection) {
             if (!_.isUndefined(err) && !_.isNull(err)) {
                 console.log('Error: %s',err.toString());
-                executionSerializer();
+                // executionSerializer();
                 return callback(err);
             }
 
@@ -109,7 +109,7 @@ function executionSerializer() {
                 timeout: connectionPool.config.queryTimeout
             }, function (err, rows, fields) {
                 connection.release();
-                executionSerializer();
+                // executionSerializer();
                 if (!_.isUndefined(err) && !_.isNull(err)) {
                     console.log('Error: %s',err.toString());
                 }

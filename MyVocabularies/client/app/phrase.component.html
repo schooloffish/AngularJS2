@@ -1,1 +1,10 @@
-<div>hahahah</div>
+<div (keyup)="onKey($event)">
+<div>{{title}}</div>
+{{phrase.phrase}}<br>
+{{phrase.phonetic}}
+<button (click)="showMeaning=!showMeaning">{{{true:'Show',false:'hide'}[!showMeaning]}}</button>
+<div [hidden]="!showMeaning">
+    {{phrase.meaning}}
+</div>
+<button (click)="next()" style="dispaly:block;">Next</button>
+</div>
