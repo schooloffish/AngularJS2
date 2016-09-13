@@ -11,20 +11,22 @@ export class PhraseComponent {
     audio: any;
     showMeaning: boolean;
     keycode: any;
+    example: string;
     constructor(private phraseService: PhraseService) {
         this.title = 'All Phrases';
         this.phrase = {};
         this.audio = new Audio();
         this.showMeaning = false;
+        this.example = '';
     }
     ngOnInit() {
-        this.phraseService.getPhrase().subscribe(data=> {
+        this.phraseService.getPhrase().subscribe(data => {
             this.phrase = data[0];
             this.play();
         });
     }
 
-    play() {
+    private play() {
         let phrase = this.phrase.phrase;
         this.audio.pause();
         this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase + '&type=2';
@@ -42,5 +44,11 @@ export class PhraseComponent {
 
     next() {
         this.ngOnInit();
+    }
+
+    addExample() {
+        this.phraseService.insertExample(this.phrase.phrase_id, this.example).subscribe(data => {
+            console.log(data);
+        })
     }
 }

@@ -9,8 +9,13 @@ export class PhraseService {
 
     }
     getPhrase() {
-        return this.http.get(this.phraseUrl).map(function (r) {
-            return r.json();
-        });
+        return this.http.get(this.phraseUrl).map(r => r.json());
+    }
+
+    insertExample(phraseId, example) {
+        return this.http.post(this.phraseUrl, {
+            phraseId: phraseId,
+            sentence: example
+        }).map(r => r.json());
     }
 }
