@@ -8,8 +8,7 @@ import {PhraseComponent} from './phrase.component';
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [PhraseService],
-    precompile: [SentenceComponent, PhraseComponent]
+    providers: [PhraseService]
 })
 export class AppComponent {
     title = 'My New Vocabularies';

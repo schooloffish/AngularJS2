@@ -16,6 +16,16 @@ var Phrase = (
             });
         }
 
+        Phrase.prototype.insertSentence = function (req, res) {
+
+            dal.insertSentence(req.body, function name(err, result) {
+                if (err) {
+                    return res.sendStatus(500);
+                }
+                return res.status(200).json(result);
+            });
+        }
+
         return Phrase;
     }
 )();
@@ -23,4 +33,5 @@ var Phrase = (
 exports.addRouters = function (router, queryManager) {
     var phrase = new Phrase(queryManager);
     router.get('/phrase', _.bind(phrase.getPhrases, phrase));
+    router.post('/phrase', _.bind(phrase.insertSentence, phrase));
 }

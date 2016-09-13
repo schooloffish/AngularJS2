@@ -8,7 +8,16 @@ function getPhrase(callback) {
     });
 }
 
+function insertSentence(params, callback) {
+    manager.executor(manager.queries.InsertSentence, {
+        phraseId: params.phraseId,
+        sentence: params.sentence
+    }, null, function insertSentenceCompleted(err, rows, fields) {
+        return callback(err, rows);
+    });
+}
 
 module.exports = {
-    getPhrase: getPhrase
+    getPhrase: getPhrase,
+    insertSentence: insertSentence
 }

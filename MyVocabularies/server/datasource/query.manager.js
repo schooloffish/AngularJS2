@@ -11,32 +11,8 @@ var queryCache = {
     GetARandomPhrase: {
         text: 'SELECT * FROM phrase ORDER BY RAND() LIMIT 1;'
     },
-    InsertWorkOrderHistoryWithoutComment: {
-        text: 'INSERT INTO work_order_history (work_order_id,user_id,action,last_update_timestamp,screen_shot_key) VALUES ($workOrderId,$userId,$action,now(),$screenShotKey) RETURNING work_order_history_id;'
-    },
-    InsertWorkOrderHistoryWithComment: {
-        text: 'INSERT INTO work_order_history (work_order_id,user_id,action,last_update_timestamp,comment,screen_shot_key) VALUES ($workOrderId,$userId,$action,now(),$comment,$screenShotKey) RETURNING work_order_history_id;'
-    },
-    InsertCommentHistory: {
-        text: 'INSERT INTO work_order_history_comment_link (work_order_history_id,comment_id) VALUES ($workOrderHistoryId,$commentId);'
-    },
-    GetQcReasons: {
-        text: 'SELECT qc_reason_id as id,description as description FROM qc_reason;'
-    },
-    GetComments: {
-        text: 'SELECT c.comment_id as id, c.description, t.comment_type_name as type FROM comment c, comment_type t WHERE c.comment_type_id = t.comment_type_id;'
-    },
-    GetWorkOrderState: {
-        text: 'SELECT  status_name, work_order_status_id FROM work_order_status;'
-    },
-    GetApproveComments: {
-        text: 'SELECT approve_comment_id as id,description as description FROM approve_comment;'
-    },
-    GetCloseComments: {
-        text: 'SELECT close_comment_id as id,description as description FROM close_comment;'
-    },
-    GetReopenComments: {
-        text: 'SELECT reopen_comment_Id as id,description as description FROM reopen_comment;'
+    InsertSentence:{
+        text:'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
     }
 };
 
