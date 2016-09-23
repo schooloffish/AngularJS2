@@ -13,7 +13,7 @@ export class PhraseComponent {
     keycode: any;
     example: string;
     constructor(private phraseService: PhraseService) {
-        this.title = 'All Phrases';
+        this.title = '';
         this.phrase = {};
         this.audio = new Audio();
         this.showMeaning = false;
