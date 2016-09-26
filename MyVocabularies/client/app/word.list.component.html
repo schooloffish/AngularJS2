@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Word</th>
+        <th>phonetic</th>
+        <th>Meaning</th>
+        <th>Update Date</th>
+    </tr>
+    <tr *ngFor="let phrase of allPhrases">
+        <td> {{phrase.phrase}}</td>
+        <td>{{phrase.phonetic}}</td>
+        <td>{{phrase.meaning}}</td>
+        <td>{{phrase.update_time}}</td>
+    </tr>
+</table>

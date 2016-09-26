@@ -11,8 +11,11 @@ var queryCache = {
     GetARandomPhrase: {
         text: 'SELECT * FROM phrase ORDER BY RAND() LIMIT 1;'
     },
-    InsertSentence:{
-        text:'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
+    InsertSentence: {
+        text: 'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
+    },
+    GetAllPhrases: {
+        text: "SELECT *, DATE_FORMAT(last_update_timestamp,'%Y-%m-%d') AS update_time FROM phrase;"
     }
 };
 
@@ -28,7 +31,7 @@ function initCache(connString) {
             return txt;
         }.bind(this));
     };
-    
+
     _.forEach(queryCache, function (item) {
         if (item.source) {
             item.text = fs.readFileSync(path.join(__dirname, item.source), 'utf8');
@@ -42,12 +45,12 @@ function initCache(connString) {
 }
 
 function executor(query, parameters, preQueryBindings, callback) {
-    workQueue.push({query: query, parameters: parameters, binding: preQueryBindings, callback: callback});
+    workQueue.push({ query: query, parameters: parameters, binding: preQueryBindings, callback: callback });
 
     executionSerializer();
 }
 
-function executionSerializer() { 
+function executionSerializer() {
     executionInProgress = true;
     if (workQueue.length === 0) {
         executionInProgress = false;
@@ -74,7 +77,7 @@ function executionSerializer() {
         var parameterString = queryText + '\r\n' + 'SQL Parameters:' + JSON.stringify(parameters);
         connectionPool.getConnection(function (err, connection) {
             if (!_.isUndefined(err) && !_.isNull(err)) {
-                console.log('Error: %s',err.toString());
+                console.log('Error: %s', err.toString());
                 // executionSerializer();
                 return callback(err);
             }
@@ -87,7 +90,7 @@ function executionSerializer() {
                 connection.release();
                 // executionSerializer();
                 if (!_.isUndefined(err) && !_.isNull(err)) {
-                    console.log('Error: %s',err.toString());
+                    console.log('Error: %s', err.toString());
                 }
                 return callback(err, rows, fields);
             });
@@ -98,7 +101,7 @@ exports.manager = {
     init: initCache,
     queries: queryCache,
     executor: executor,
-    test:function (params) {
-        return [1,2,3]
+    test: function (params) {
+        return [1, 2, 3]
     }
 };

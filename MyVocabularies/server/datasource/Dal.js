@@ -8,6 +8,12 @@ function getPhrase(callback) {
     });
 }
 
+function getAllPhrases(callback) {
+    manager.executor(manager.queries.GetAllPhrases, null, null, function getAllPhrasesCompleted(err, rows, fields) {
+        return callback(err, rows);
+    });
+}
+
 function insertSentence(params, callback) {
     manager.executor(manager.queries.InsertSentence, {
         phraseId: params.phraseId,
@@ -19,5 +25,6 @@ function insertSentence(params, callback) {
 
 module.exports = {
     getPhrase: getPhrase,
-    insertSentence: insertSentence
+    insertSentence: insertSentence,
+    getAllPhrases: getAllPhrases
 }
