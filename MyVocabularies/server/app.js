@@ -1,9 +1,9 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var app = express();
+let express = require('express');
+let bodyParser = require('body-parser');
+let path = require('path');
+let app = express();
 
-var clientFolder = path.join(path.dirname(__dirname), 'client')
+let clientFolder = path.join(path.dirname(__dirname), 'client')
 console.log(clientFolder);
 
 app.use(bodyParser.json());
@@ -14,20 +14,9 @@ app.get('/', function (req, res) {
     res.send('hello,world!');
 });
 
-var router = express.Router();
-var queryManager = require('./datasource/query.manager.js').manager;
-queryManager.init({
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    multipleStatements: true,
-    database: 'MyVocabularies',
-    options: {
-        requestTimeout: 60
-    }
-});
-
-require('./rest/phrase.js').addRouters(router, queryManager);
+let Phrase = require('./rest/phrase.js');
+let phrase = new Phrase();
+let router = phrase.expressRouter();
 
 app.use('/api/v1', router);
 

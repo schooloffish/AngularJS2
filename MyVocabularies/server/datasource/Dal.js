@@ -1,30 +1,55 @@
-var _ = require('lodash');
-var util = require('util');
-var manager = require('./query.manager.js').manager;
+'use strict';
 
-function getPhrase(callback) {
-    manager.executor(manager.queries.GetARandomPhrase, null, null, function getPhraseQueryCompleted(err, rows, fields) {
-        return callback(err, rows);
-    });
+let _ = require('lodash');
+let util = require('util');
+let QuerManager = require('./query.manager.js');
+
+class Dal {
+    constructor() {
+        this.queryManager = new QuerManager({
+            host: 'localhost',
+            user: 'root',
+            password: '123456',
+            multipleStatements: true,
+            database: 'MyVocabularies',
+            options: {
+                requestTimeout: 60
+            }
+        });
+    }
+
+    getPhrase() {
+        return new Promise((resolve, reject) => {
+            this.queryManager.executor(this.queryManager.queries.GetARandomPhrase, null, null).then((rows) => {
+                resolve(rows);
+            }, (err) => {
+                reject(err);
+            });
+        });
+    }
+
+    getAllPhrases() {
+        return new Promise((resolve, reject) => {
+            this.queryManager.executor(this.queryManager.queries.GetAllPhrases, null, null).then((rows) => {
+                resolve(rows);
+            }, (err) => {
+                reject(err);
+            });
+        });
+    }
+
+    insertSentence(params) {
+        return new Promise((resolve, reject) => {
+            this.queryManager.executor(this.queryManager.queries.InsertSentence, {
+                phraseId: params.phraseId,
+                sentence: params.sentence
+            }, null).then((rows) => {
+                resolve(rows);
+            }, (err) => {
+                reject(err);
+            });
+        });
+    }
 }
 
-function getAllPhrases(callback) {
-    manager.executor(manager.queries.GetAllPhrases, null, null, function getAllPhrasesCompleted(err, rows, fields) {
-        return callback(err, rows);
-    });
-}
-
-function insertSentence(params, callback) {
-    manager.executor(manager.queries.InsertSentence, {
-        phraseId: params.phraseId,
-        sentence: params.sentence
-    }, null, function insertSentenceCompleted(err, rows, fields) {
-        return callback(err, rows);
-    });
-}
-
-module.exports = {
-    getPhrase: getPhrase,
-    insertSentence: insertSentence,
-    getAllPhrases: getAllPhrases
-}
+module.exports = Dal;

@@ -1,47 +1,45 @@
-var _ = require('lodash');
-var dal = require('../datasource/Dal.js');
+let _ = require('lodash');
+let Dal = require('../datasource/Dal.js');
+let express = require('express');
 
-var Phrase = (
-    function () {
-        Phrase = function (queryManager) {
-            this.queryManager = queryManager;
-        }
-
-        Phrase.prototype.getPhrases = function (req, res) {
-            dal.getPhrase(function name(err, result) {
-                if (err) {
-                    return res.sendStatus(500);
-                }
-                return res.status(200).json(result);
-            });
-        }
-
-        Phrase.prototype.insertSentence = function (req, res) {
-
-            dal.insertSentence(req.body, function name(err, result) {
-                if (err) {
-                    return res.sendStatus(500);
-                }
-                return res.status(200).json(result);
-            });
-        }
-
-        Phrase.prototype.getAllPhrases = function (req, res) {
-            dal.getAllPhrases(function (err, result) {
-                if (err) {
-                    return res.sendStatus(500);
-                }
-                return res.status(200).json(result);
-            });
-        };
-
-        return Phrase;
+class Phrase {
+    constructor() {
+        this.dal = new Dal();
     }
-)();
 
-exports.addRouters = function (router, queryManager) {
-    var phrase = new Phrase(queryManager);
-    router.get('/phrase', _.bind(phrase.getPhrases, phrase));
-    router.get('/allphrases', _.bind(phrase.getAllPhrases, phrase));
-    router.post('/phrase', _.bind(phrase.insertSentence, phrase));
+    expressRouter() {
+        let router = express.Router();
+
+        router.get('/phrase', _.bind(this.getPhrases, this));
+        router.get('/allphrases', _.bind(this.getAllPhrases, this));
+        router.post('/phrase', _.bind(this.insertSentence, this));
+
+        return router;
+    }
+
+    getPhrases(req, res) {
+        this.dal.getPhrase().then((result) => {
+            return res.status(200).json(result);
+        }, (err) => {
+            return res.sendStatus(500);
+        });
+    }
+
+    insertSentence(req, res) {
+        this.dal.insertSentence(req.body).then((result) => {
+            return res.status(200).json(result);
+        }, (err) => {
+            return res.sendStatus(500);
+        });
+    }
+
+    getAllPhrases(req, res) {
+        this.dal.getAllPhrases().then((result) => {
+            return res.status(200).json(result);
+        }, (err) => {
+            return res.sendStatus(500);
+        });
+    }
 }
+
+module.exports = Phrase;
