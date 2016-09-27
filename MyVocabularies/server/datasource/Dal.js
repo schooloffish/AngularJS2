@@ -19,35 +19,29 @@ class Dal {
     }
 
     getPhrase() {
-        return new Promise((resolve, reject) => {
-            this.queryManager.executor(this.queryManager.queries.GetARandomPhrase, null, null).then((rows) => {
-                resolve(rows);
-            }, (err) => {
-                reject(err);
-            });
+        return this.queryManager.executor(this.queryManager.queries.GetARandomPhrase, null, null).then((rows) => {
+            return Promise.resolve(rows);
+        }, (err) => {
+            return Promise.reject(err);
         });
     }
 
     getAllPhrases() {
-        return new Promise((resolve, reject) => {
-            this.queryManager.executor(this.queryManager.queries.GetAllPhrases, null, null).then((rows) => {
-                resolve(rows);
-            }, (err) => {
-                reject(err);
-            });
+        return this.queryManager.executor(this.queryManager.queries.GetAllPhrases, null, null).then((rows) => {
+            return Promise.resolve(rows);
+        }, (err) => {
+            return Promise.reject(err);
         });
     }
 
     insertSentence(params) {
-        return new Promise((resolve, reject) => {
-            this.queryManager.executor(this.queryManager.queries.InsertSentence, {
-                phraseId: params.phraseId,
-                sentence: params.sentence
-            }, null).then((rows) => {
-                resolve(rows);
-            }, (err) => {
-                reject(err);
-            });
+        return this.queryManager.executor(this.queryManager.queries.InsertSentence, {
+            phraseId: params.phraseId,
+            sentence: params.sentence
+        }, null).then((rows) => {
+            return Promise.resolve(rows);
+        }, (err) => {
+            return Promise.reject(err);
         });
     }
 }
