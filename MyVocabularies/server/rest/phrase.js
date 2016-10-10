@@ -1,3 +1,5 @@
+'use strict';
+
 let _ = require('lodash');
 let Dal = require('../datasource/Dal.js');
 let express = require('express');
