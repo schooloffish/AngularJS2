@@ -1,0 +1,212 @@
+jaywalker|The jaywalker was run over by a truck.
+honk|Truck honk is really annoying.
+a while back|A while back, we had a code review of the consumer with Ray and April.
+|I don’t want to waste too much of your time – just wanted to bounce it off you in case I was doing something stupid.
+|That being said, this is an easy fix.
+drizzle|It is drizzling in the morning.
+belly|It's necessary to get rid of my big fat belly.
+free up|I'll do something when I free up.
+ongoing|This task will be ongoing for quite a while.
+take my hat off to|I take my hat off to you.
+continent|Which continent is Macedonia in?
+return the favor|You're so nice, I'll return the favor.
+be off to|You're off to a good start.
+hit an edge case|We need to consider that scenario hitting an edge case
+the other day|I talked to her the other day.
+|We are pretty confident it was MySql issues (or our MySql access layer) that gave us the production outage because UTQ could log in, but not see the dashboard.
+unforeseen|I expect the fix will not be that difficult and Leo should be able to get it done tonight unless there are unforeseen issues.
+exceed|It's 23MB which exceeds the Jira 20MB limit.
+time consuming|This is time consuming and error prone.
+hand this off|As of right now, I need to hand this off for you to work on Monday.
+mixe around|I also noticed the TenantPhotoSubject and TenantPhotoComments are mixed around.
+seem to remember|I seem to remember making this change to the old consumer? Or maybe I'm not remembering right. Do you remember us fixing this before with the old schema?
+|Sending a workorder to QC in FieldCheck will result in you receiving an email from the producer
+fill in|I can fill you in on more of the details some other day.
+some other day|I can fill you in on more of the details some other day.
+initial testing|Initial testing looks real good on this. Kyle or Paulo will test some more later.
+remain unchanged|Don't worry, this will remain unchanged.
+Hold off on|Hold off on this for a couple of days, I have a new task for you.
+|I thought I knew you from somewhere.
+unpopulated|I'm on a 4g tether and driving through Eastern Colorado(which is very, unpopulated).  so it may take a while if my internet fades in and out.
+concern with|I'm only concerned with query time, I'm less concerned about bandwidth issues.
+rebound boy|I don't want be the rebound girl/boy(safety net) any more, I'm gonna be a new man in one month's time, trust me.
+safety net|I don't want be the rebound girl/boy(safety net) any more, I'm gonna be a new man in one month's time, trust me.
+friends with benefits|Are you looking for friends with benefits?
+a while back|I thought maybe we had fixed this in the dev branch a while back.
+make up|We had a fight yesterday, but we make up today.
+fine|He paid a fine of $30. / He paid a $30 fine.
+fine|court fined him $200.
+fine|driver was fined 30 pounds for speeding.
+invincible|You think you're invincible, but it's not true, there're always people better than you.
+apocalypse|The 4 horsemen of the apocalypse: War, Famine, Pestilence and Death
+famine|They were crazed by the famine and pestilence of that bitter winter.
+pestilence|They were crazed by the famine and pestilence of that bitter winter.
+exhausted|I'm exhausted, I need to sleep now.
+cone|Every child loves Ice cream cone.
+feel obliged|I feel obliged to end this now.
+patriotism|When it comes to talking about patriotism, he's an extremist.
+extremist|When it comes to talking about patriotism, he's an extremist.
+distinction|They have only a fine distinction between them.
+dismay|"Someone's stolen my bicycle! " she said in dismay.
+eligible|I'm eligible for quarter bonus.
+tournament|March madness is here, Everybody watches the top 65 college basketball teams in the March Madness tournament!
+chillies|People in Szechwan love spicy food, which is full of chillies.
+Things are moving along well.|Things are moving along well. I know Leo's out part of today.
+soaked|It's raining cats and dogs out there so I am soaked.
+decapitate|ISIS is a terrorist organization, which decapitates innocent civilians.
+civilian|ISIS is a terrorist organization, which decapitates innocent civilians.
+As a result|As a result, I think we'll need the following changes that I can think of right now.
+come to|After discussing the Additional details concept some, we've came to the following conclusion:
+insidious|That insidious man tried to intimidate me into not competing with him.
+intimidate|That insidious man tried to intimidate me into not competing with him.
+conspire|You conspire with him against me?
+tempt|He tried to tempt me to cheat in the examination.
+eccentric|An eccentric man is playing a prank on us.
+prank|An eccentric man is playing a prank on us.
+respectively|Product, Organization and Subdivision should be 3,3,2 respectively.
+run into|I ran into some problems. ("meet some problems" is wrong, wrong, wrong)
+contaminate|Don’t watch the blue movies just because it will contaminate your mind.
+contaminate|They cause illness, and they contaminate our clothes and food.
+pollute|The large number of vehicles in big cities heavily pollute the atmosphere.
+atmosphere|The large number of vehicles in big cities heavily pollute the atmosphere.
+dismantle|They decided to dismantle the machine and start again from scratch.
+from scratch|They decided to dismantle the machine and start again from scratch.
+blunt|My knife has been blunt, can you help me to grind it?
+blunt|I'm a blunt man, I would say no to him.
+immaculate|Jim's room was immaculate after his mother cleaned it.
+scanty|The news today is so far scanty , but good.
+be scanty of|The village school is scanty of textbooks.
+reprimand|The school principal had to reprimand the child for talking back to her teacher.
+credulous|Only a credulous person would fall for that old trick.
+resemblance|Tina bears a striking resemblance to her mother.
+irritation|He could not hide his irritation that he had not been invited.
+irritate|Do not use soap as it may irritate sensitive skin.
+objection|We have at least two objections. First, defining heroes is not the component's job. Second, we can't easily share that list of heroes with other components and views.
+acquisition|We can refactor this hero data acquisition business to a single service that provides heroes, and share that service with all components that need heroes.
+invariably|Because data services are invariably asynchronous.
+indifferent|Do what you desire to me, I'm indifferent.
+conventionally|Every Angular app has at least one root component, conventionally named AppComponent
+Years of experience and bitter tears|Years of experience and bitter tears have taught us to keep complex logic out of the constructor.
+By convention|By convention, we'll find it in a file named app.component.ts
+intoxicate|He does not drink at all ; a little wine may intoxicate him .
+profound|However, the heart was more profound thinking of you.
+revulsion|She felt revulsion at his appearance.
+deliberately|You were deliberately trying to humiliate me.
+abstruse|The new design is so abstruse that we need more time on it.
+inflatable|Inflatable dolls are designed for the bachelors.
+indiscriminate|She has been indiscriminate in choosing her friends.
+recluse|She cannot just be written off as an eccentric recluse.
+despise|She despises the girl who tried to kiss her boyfriend.
+scorn|They have so much scorn for me; why do they hate me so much?
+contempt|They have nothing but contempt for me!" she said in sorrow.
+sorrow|They have nothing but contempt for me!" she said in sorrow.
+tempt|Hi, guys, it's difficult not to be tempted by such a nice job, right?
+lure|She feels the lure of his muscles.
+bewildered|She is bewildered; she does not know what to do.
+sunken|Let's go look for treasure in the sunken wreck!
+mumble|I want to hear this gossip - speak up, and don't mumble!
+cement|The cement cracked open, leaving a cleft about five centimeters across.
+cleft|The cement cracked open, leaving a cleft about five centimeters across.
+Fervent|Fervent religious extremism has encouraged people to assail the government.
+religious|Fervent religious extremism has encouraged people to assail the government.
+assail|Fervent religious extremism has encouraged people to assail the government.
+perch|Parrots perch on high branches.
+graze|What a beautiful sight--cows grazing peacefully on a green pasture.
+pasture|What a beautiful sight--cows grazing peacefully on a green pasture.
+meadow|The sun rises over the grassy meadow.
+arduous|Cycling uphill is an arduous task.
+aristocrat|These old-fashioned aristocrats used to rule Europe.
+devastating|The devastating earthquake reduced the town to rubble.
+rubble|The devastating earthquake reduced the town to rubble.
+astride|Riding astride while practicing yoga.
+hoax|Of course the moon landing was hoax!
+grapple|The two wrestlers grappled in the ring.
+grudge|The man holds a grudge against the woman for a fight they had last week.
+haul|The woman hauled her drunk husband home.
+swamp|A strange swamp creature? How eerie!
+eerie|A strange swamp creature? How eerie!
+fumble|The potato was hot, so I fumbled and dropped it.
+tedious|Writing such push/pull logic by hand is tedious, error-prone, and a nightmare to read as any experienced jQuery programmer can attest.
+hobble|The old man hobbles over the pedestrian crossing.
+pedestrian|The old man hobbles over the pedestrian crossing.
+rickety|That chair looks a little rickety.
+mirth|She loved to laugh, and her mirth was infectious.
+infectious|She loved to laugh, and her mirth was infectious.
+moth|Why do moths love light so much?
+glint|The glint of gold and jewels led me to the undersea treasure.
+gleam|The golden coins gleam in the light.
+flicker|The stars flicker in the sky.
+jibe|All these nasty jibes about my haircut are getting really old.
+thorough|Make sure to be very thorough, take your time, and do lots of testing.
+on hold|Let's put the angular 2 migration on hold for a few days
+the wave of the future|it's the wave of the future.
+at first glance|At first glance, I noticed a couple things.
+beef jerky|We love beef jerky.
+leftover|I see some leftover query-builder code in the appModules.js
+keep it up|You've been making great progress! keep it up!
+|So the first question that comes to my mind is:
+cartwheel|Leo is so good at cartwheels. He can do it 3 times in a row.
+diarrhea|Hotpot is so good and it's even worth having diarrhea.
+stuck in traffic|We have been stuck/sit in traffic for two hours.
+drop off|Can you drop me off at Kai's house today?
+Popsicle|Popsicles are the best thing in the summer.
+tap water|You can't drink tap water directly, you will get sick.
+fruit punch|Fruit punch is very tasty.
+swimming goggles|I can't swim without my swimming goggles.
+floaty|There're all kinds of floaties in the swimming pool.
+forward roll|I did a forward roll, backward rolls are way tougher than forward rolls.
+shallow end|It's safe to stay in the shallow end.
+front flip|I've only seen one guy do front flips in my life, and I've never seen anyone do a back flip.
+flip over|Can you flip over this card?
+tie|It's a tie, it's a tie again.
+laser gun|Barney is that crazy about laser gun/tag
+laser tag|Barney is that crazy about laser gun/tag
+trampoline|Feifei loves trampoline.
+checked luggage|We have to present our IDs, then check in the luggage, these are my checked luggage, and the rest of them are carry-on luggage.
+carry-on luggage|We have to present our IDs, then check in the luggage, these are my checked luggage, and the rest of them are carry-on luggage.
+non-stop|Yes, It's a non-stop flight, let's get through the security.
+layover|We have 2 hours' layover in Lox, we would have a good time there.
+parking lot|back into the parking lot
+parking spot|back out of the parking spot/lot
+parking lot|I want you to show me how to reverse into that parking lot.
+clumsy|I always feel clumsy while reversing a car.
+precede|Enters a valid date in Begin Date field, then a date that precedes that in End Date field.
+tend to|I tend to like Option 2 better, but I want to discuss with you guys. The only downside that I see on Option 2 is how it will affect the search.
+stick with|Stick with the default unless you have a compelling reason to resort to hash routes.
+hot air balloon|hot air balloon, that takes people up in a basket?
+a short day trip|We took a short day trip to Luodai ancient town.
+henpecked|He's been bossed around by his wife. He's so henpecked.
+comes in handy|Keep it, it comes in handy.
+liver|Find a liver to save his dad.
+addict|She is a TV addict and watches as much as she can.
+insomnia|I've been suffering from insomnia.
+stuffy|I have a stuffy nose.
+stuffed|I have a stuffed nose.
+clogged|My nose is always clogged up.
+plugged|My nose is always plugged up.
+rain check|I'll take a rain check on the beer.
+soil|CIA is not allowed to take action in America soil.
+treason|She was caught for treason.
+make a concession|For the purpose of sign the contract, we are ready to make a concession.
+mole|I'll find the mole and take revenge on him.
+take revenge on|I'll find the mole and take revenge on him.
+clock is ticking|Clock is ticking.
+spill|He always spilled the drinks.
+informant|Being an informant is so dangerous.
+puke|I'm going to puke now.
+gloat|I'm not here to gloat.
+chase down|Go chase down the leads and find the bad guy.
+chop|Get me a cup of coffee, chop, chop.
+scam|It is a scam and will give them access to your Facebook account.
+least favorite|She is my least favorite teacher.
+cut someone some slack|We should cut her some slack.
+catch up|We'll catch up soon.
+boarding school|I went to a boarding school.
+for good|You're leaving? for good?
+initiative|Take the initiative. You'll be rewarded for it.
+villain|Every villain has his Achilles' heel.
+Achilles' heel|Every villain has his Achilles' heel.
+deport|The government must deport those illegal aliens.
+sounds like a winner|Sounds like a winner! Let's do it.
+give somebody a ride|Can you give me a ride?
+keep you posted|I'll keep you posted.

@@ -7,6 +7,11 @@
     <div [hidden]="!showMeaning">
         {{phrase.meaning}}
     </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let sentence of this.phrase.sentences">
+            {{sentence}}
+        </li>
+    </ul>
     <br>
     <button class="btn btn-info" (click)="next()" style="dispaly:block;">Next</button><br>
 

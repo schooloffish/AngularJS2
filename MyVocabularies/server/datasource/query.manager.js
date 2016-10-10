@@ -7,7 +7,7 @@ let mysql = require('mysql');
 
 let queryCache = {
     GetARandomPhrase: {
-        text: 'SELECT * FROM phrase ORDER BY RAND() LIMIT 1;'
+        text: 'set @id=(SELECT phrase_id FROM phrase ORDER BY RAND() LIMIT 1);SELECT * FROM phrase where phrase_id=@id;select sentence from example where phrase_id=@id;'
     },
     InsertSentence: {
         text: 'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
@@ -52,7 +52,6 @@ class QueryManager {
                     _.each(Object.keys(query.binding), (bindKey) => {
                         let bindValue = preQueryBindings[bindKey];
                         if (bindKey === 'dbName') {
-                            //CVF-729.   escaping database name to support hyphen in MRS-QA
                             bindValue = '`' + preQueryBindings[bindKey] + '`';
                         }
                         queryText = queryText.replace(new RegExp(query.binding[bindKey].replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1"), 'gm'), bindValue);

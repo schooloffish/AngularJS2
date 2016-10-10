@@ -20,7 +20,9 @@ class Dal {
 
     getPhrase() {
         return this.queryManager.executor(this.queryManager.queries.GetARandomPhrase, null, null).then((rows) => {
-            return Promise.resolve(rows);
+            let phrase = rows[1][0];
+            phrase.sentences = _.map(rows[2], 'sentence');
+            return Promise.resolve(phrase);
         }, (err) => {
             return Promise.reject(err);
         });

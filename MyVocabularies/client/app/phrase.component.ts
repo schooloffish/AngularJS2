@@ -21,12 +21,19 @@ export class PhraseComponent {
     }
     ngOnInit() {
         this.phraseService.getPhrase().subscribe(data => {
-            this.phrase = data[0];
+            this.phrase = data;
             this.play();
         });
     }
 
     private play() {
+        this.audio.onended = () => {
+            this.audio.onended = null;
+            if (this.phrase.sentences.length) {
+                this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + this.phrase.sentences[0] + '&type=2';
+                this.audio.play();
+            }
+        };
         let phrase = this.phrase.phrase;
         this.audio.pause();
         this.audio.src = 'http://dict.youdao.com/dictvoice?audio=' + phrase + '&type=2';
