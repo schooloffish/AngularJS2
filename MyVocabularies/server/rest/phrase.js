@@ -14,9 +14,18 @@ class Phrase {
 
         router.get('/phrase', _.bind(this.getPhrases, this));
         router.get('/allphrases', _.bind(this.getAllPhrases, this));
+        router.get('/allSentence', _.bind(this.getAllSentence, this));
         router.post('/phrase', _.bind(this.insertSentence, this));
 
         return router;
+    }
+
+    getAllSentence(req, res) {
+        this.dal.getAllSentence().then((result) => {
+            return res.status(200).json(result);
+        }, (err) => {
+            return res.sendStatus(500);
+        });
     }
 
     getPhrases(req, res) {

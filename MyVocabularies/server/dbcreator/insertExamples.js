@@ -46,21 +46,3 @@ lineReader.on('line', function (line) {
         console.log(`failed to insert, error: ${err.message}`);
     });
 });
-
-
-
-// if (generateSqlFile) {
-//     fs.writeFile(path.join(__dirname, 'result.sql'), dbCreateString, function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//         console.log("The file was saved!");
-//     });
-// }
-// else {
-//     connection.query(dbCreateString, function (err, rows, fields) {
-//         if (err) throw err;
-//         console.log('Completed.');
-//         connection.end();
-//     });
-// }

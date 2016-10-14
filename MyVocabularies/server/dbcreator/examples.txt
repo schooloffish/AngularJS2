@@ -1,8 +1,8 @@
 jaywalker|The jaywalker was run over by a truck.
 honk|Truck honk is really annoying.
 a while back|A while back, we had a code review of the consumer with Ray and April.
-|I don’t want to waste too much of your time – just wanted to bounce it off you in case I was doing something stupid.
-|That being said, this is an easy fix.
+bounce|I don’t want to waste too much of your time – just wanted to bounce it off you in case I was doing something stupid.
+that being said|That being said, this is an easy fix.
 drizzle|It is drizzling in the morning.
 belly|It's necessary to get rid of my big fat belly.
 free up|I'll do something when I free up.
@@ -13,20 +13,20 @@ return the favor|You're so nice, I'll return the favor.
 be off to|You're off to a good start.
 hit an edge case|We need to consider that scenario hitting an edge case
 the other day|I talked to her the other day.
-|We are pretty confident it was MySql issues (or our MySql access layer) that gave us the production outage because UTQ could log in, but not see the dashboard.
+outage|We are pretty confident it was MySql issues (or our MySql access layer) that gave us the production outage because UTQ could log in, but not see the dashboard.
 unforeseen|I expect the fix will not be that difficult and Leo should be able to get it done tonight unless there are unforeseen issues.
 exceed|It's 23MB which exceeds the Jira 20MB limit.
 time consuming|This is time consuming and error prone.
 hand this off|As of right now, I need to hand this off for you to work on Monday.
 mixe around|I also noticed the TenantPhotoSubject and TenantPhotoComments are mixed around.
 seem to remember|I seem to remember making this change to the old consumer? Or maybe I'm not remembering right. Do you remember us fixing this before with the old schema?
-|Sending a workorder to QC in FieldCheck will result in you receiving an email from the producer
+result in|Sending a workorder to QC in FieldCheck will result in you receiving an email from the producer
 fill in|I can fill you in on more of the details some other day.
 some other day|I can fill you in on more of the details some other day.
 initial testing|Initial testing looks real good on this. Kyle or Paulo will test some more later.
 remain unchanged|Don't worry, this will remain unchanged.
 Hold off on|Hold off on this for a couple of days, I have a new task for you.
-|I thought I knew you from somewhere.
+know you from somewhere|I thought I knew you from somewhere.
 unpopulated|I'm on a 4g tether and driving through Eastern Colorado(which is very, unpopulated).  so it may take a while if my internet fades in and out.
 concern with|I'm only concerned with query time, I'm less concerned about bandwidth issues.
 rebound boy|I don't want be the rebound girl/boy(safety net) any more, I'm gonna be a new man in one month's time, trust me.
@@ -144,7 +144,7 @@ at first glance|At first glance, I noticed a couple things.
 beef jerky|We love beef jerky.
 leftover|I see some leftover query-builder code in the appModules.js
 keep it up|You've been making great progress! keep it up!
-|So the first question that comes to my mind is:
+come to my mind|So the first question that comes to my mind is:
 cartwheel|Leo is so good at cartwheels. He can do it 3 times in a row.
 diarrhea|Hotpot is so good and it's even worth having diarrhea.
 stuck in traffic|We have been stuck/sit in traffic for two hours.
@@ -210,3 +210,6 @@ deport|The government must deport those illegal aliens.
 sounds like a winner|Sounds like a winner! Let's do it.
 give somebody a ride|Can you give me a ride?
 keep you posted|I'll keep you posted.
+infamous|ISIS is infamous.
+take a peek|Please just let me take a peek at it.
+have no means|We have no means to make a concession.

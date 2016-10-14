@@ -12,6 +12,10 @@ export class PhraseService {
         return this.http.get(this.phraseUrl).map(r => r.json());
     }
 
+    getAllSentence(){
+        return this.http.get('api/v1/allSentence').map(r => r.json());
+    }
+
     getAllPhrases() {
         return this.http.get('api/v1/allphrases').map(r => r.json());
     }

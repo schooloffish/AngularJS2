@@ -6,6 +6,9 @@ let path = require('path');
 let mysql = require('mysql');
 
 let queryCache = {
+    GetAllSentence: {
+        text: 'select sentence from example;'
+    },
     GetARandomPhrase: {
         text: 'set @id=(SELECT phrase_id FROM phrase ORDER BY RAND() LIMIT 1);SELECT * FROM phrase where phrase_id=@id;select sentence from example where phrase_id=@id;'
     },

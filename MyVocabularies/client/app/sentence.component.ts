@@ -1,7 +1,8 @@
 /**
  * Created by liuxun on 7/14/2016.
  */
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PhraseService} from './phrase.service'
 
 @Component({
     selector: 'sentence',
@@ -12,9 +13,17 @@ export class SentenceComponent {
         'Writing such push/pull logic by hand is tedious, error-prone, and a nightmare to read as any experienced jQuery programmer can attest.'];
     audio; any;
 
-    constructor() {
+    constructor(private phraseService: PhraseService) {
         this.audio = new Audio();
     }
+
+    ngOnInit() {
+        this.phraseService.getAllSentence().subscribe(data => {
+            this.vocabularies = data;
+        });
+    }
+
+    getAllSentence
 
     play(phrase) {
         this.audio.pause();
