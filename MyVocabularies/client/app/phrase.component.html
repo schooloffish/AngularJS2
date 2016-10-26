@@ -1,22 +1,35 @@
 <div (keyup)="onKey($event)">
-    <h4><label>{{phrase.phrase}}</label></h4>
-    {{phrase.phonetic}}
-    <br>
-    <button class="btn btn-info" (click)="showMeaning=!showMeaning">{{{true:'Show',false:'hide'}[!showMeaning]}}</button>
-    <br>
-    <div [hidden]="!showMeaning">
-        {{phrase.meaning}}
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let sentence of this.phrase.sentences">
-            {{sentence}}
-        </li>
-    </ul>
-    <br>
-    <button class="btn btn-info" (click)="next()" style="dispaly:block;">Next</button><br>
+	<h2 class="text-center">{{phrase.phrase}}</h2>
+	<h2 class="text-center" style="color:gray;dispaly:inline-block;">{{phrase.phonetic}}
+		<a href="#" onclick='return false;' (click)="play();">
+			<span class="glyphicon glyphicon-volume-up"></span>
+		</a>
+	</h2>
+	<br>
+	<div [hidden]="!showMeaning">
+		{{phrase.meaning}}
+	</div>
+	<ul class="list-group" [hidden]="!showMeaning">
+		<li class="list-group-item" *ngFor="let sentence of this.phrase.sentences">
+			{{sentence}}
+		</li>
+	</ul>
 
+	<div class="text-center">
+		<div [hidden]="showNext">
+			<button class="btn btn-info">I remember</button>
+			<button class="btn btn-info" (click)="showMeaning=!showMeaning;showNext=!showNext;">I forget</button>
+		</div>
+		<h2 style="dispaly:inline-block;">
+			<a href="#" [hidden]="!showNext" onclick="return false;" (click)="next()">
+				<span class="glyphicon glyphicon-arrow-right"></span>
+			</a>
+		</h2>
+	</div>
 
-    <textarea [(ngModel)]="example"></textarea >
+	<br>
+	<br>
+	<textarea [(ngModel)]="example"></textarea >
     <br>
     <button class="btn btn-info" (click)="addExample()">add example to this phrase</button>
 </div>

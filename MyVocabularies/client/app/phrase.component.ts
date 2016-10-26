@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {PhraseService} from './phrase.service';
+import { Component, OnInit } from '@angular/core';
+import { PhraseService } from './phrase.service';
 
 @Component({
     selector: 'phrase',
@@ -12,14 +12,16 @@ export class PhraseComponent {
     showMeaning: boolean;
     keycode: any;
     example: string;
+    showNext: boolean;
     constructor(private phraseService: PhraseService) {
         this.title = '';
         this.phrase = {};
         this.audio = new Audio();
-        this.showMeaning = false;
         this.example = '';
     }
     ngOnInit() {
+        this.showMeaning = false;
+        this.showNext = false;
         this.phraseService.getPhrase().subscribe(data => {
             this.phrase = data;
             this.play();

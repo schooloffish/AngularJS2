@@ -213,3 +213,6 @@ keep you posted|I'll keep you posted.
 infamous|ISIS is infamous.
 take a peek|Please just let me take a peek at it.
 have no means|We have no means to make a concession.
+term|Those are my terms.
+foster|His foster father is a good guy.
+spoil|You spoiled that boy.
