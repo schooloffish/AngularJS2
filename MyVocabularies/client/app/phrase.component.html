@@ -17,7 +17,7 @@
 
 	<div class="text-center">
 		<div [hidden]="showNext">
-			<button class="btn btn-info">I remember</button>
+			<button class="btn btn-info" (click)="remember()">I remember</button>
 			<button class="btn btn-info" (click)="showMeaning=!showMeaning;showNext=!showNext;">I forget</button>
 		</div>
 		<h2 style="dispaly:inline-block;">
@@ -29,7 +29,9 @@
 
 	<br>
 	<br>
-	<textarea [(ngModel)]="example"></textarea >
+	<div [hidden]="!showAddExample"> 
+		<textarea [(ngModel)]="example"></textarea >
     <br>
     <button class="btn btn-info" (click)="addExample()">add example to this phrase</button>
+	</div>
 </div>

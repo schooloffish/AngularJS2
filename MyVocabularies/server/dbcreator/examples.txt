@@ -216,3 +216,6 @@ have no means|We have no means to make a concession.
 term|Those are my terms.
 foster|His foster father is a good guy.
 spoil|You spoiled that boy.
+in regards to|In regards to Time Outs during Searches, I no longer get timeouts when searching by Work Order Number.
+poll|Clinton still leads Trump in the CNN Poll of Polls.
+rally|There're lots of people in Trump rally.

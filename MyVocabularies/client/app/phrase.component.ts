@@ -13,6 +13,7 @@ export class PhraseComponent {
     keycode: any;
     example: string;
     showNext: boolean;
+    showAddExample:boolean;
     constructor(private phraseService: PhraseService) {
         this.title = '';
         this.phrase = {};
@@ -21,6 +22,7 @@ export class PhraseComponent {
     }
     ngOnInit() {
         this.showMeaning = false;
+        this.showAddExample=false;
         this.showNext = false;
         this.phraseService.getPhrase().subscribe(data => {
             this.phrase = data;
@@ -49,6 +51,10 @@ export class PhraseComponent {
         else if (event.code === 'KeyP') {
             this.play();
         }
+    }
+
+    remember() {
+        this.next();
     }
 
     next() {
