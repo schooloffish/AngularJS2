@@ -219,3 +219,10 @@ spoil|You spoiled that boy.
 in regards to|In regards to Time Outs during Searches, I no longer get timeouts when searching by Work Order Number.
 poll|Clinton still leads Trump in the CNN Poll of Polls.
 rally|There're lots of people in Trump rally.
+biased|The media here is very biased in favor of Democrats.
+embassy|We got protesters outside the embassy here.
+brag|Do not brag or bluff.
+feudal|Nate and Ray are lost in feudal japan.
+bias|Do not push your political beliefs and bias on to your students.
+ballot|He tweeted out a picture of his filled-in ballot with the caption.
+veteran|Our nation should take care of veteran.

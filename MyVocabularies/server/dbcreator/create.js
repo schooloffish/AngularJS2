@@ -6,6 +6,7 @@ let path = require('path');
 let _ = require('lodash');
 let util = require('util');
 let xml2json = require('simple-xml2json');
+var parseString = require('xml2js').parseString;
 
 let connection = mysql.createConnection({
     host: 'localhost',
@@ -43,29 +44,30 @@ let insert_sql
 
 //read youdao dict xml
 xmlString = fs.readFileSync(path.join(__dirname, 'MyWords_YouDao.xml'), 'utf8');
-json = xml2json.parser(xmlString);
-_.forEach(json.wordbook.item, function (phrase) {
-    _.isString(phrase.phonetic) || (phrase.phonetic = '');
-    _.isString(phrase.trans) || (phrase.trans = '');
+parseString(xmlString, { explicitArray: false }, (err, result) => {
+    _.forEach(result.wordbook.item, function (phrase) {
+        _.isString(phrase.phonetic) || (phrase.phonetic = '');
+        _.isString(phrase.trans) || (phrase.trans = '');
 
-    let value = util.format("('%s','%s','%s','%s')", phrase.word.replace(/'/g, '`'), phrase.phonetic.replace(/'/g, '`'), phrase.trans.replace(/\r\n/g, ''), '2016-04-29 21:43:52');
-    values.push(value);
+        let value = util.format("('%s','%s','%s','%s')", phrase.word.replace(/'/g, '`'), phrase.phonetic.replace(/'/g, '`'), phrase.trans.replace(/\r\n/g, ''), '2016-04-29 21:43:52');
+        values.push(value);
+    });
+    insert_sql = util.format(sqlTemplate, values.join(','));
+    dbCreateString += insert_sql + ';';
+
+    if (generateSqlFile) {
+        fs.writeFile(path.join(__dirname, 'result.sql'), dbCreateString, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
+    }
+    else {
+        connection.query(dbCreateString, function (err, rows, fields) {
+            if (err) throw err;
+            console.log('Completed.');
+            connection.end();
+        });
+    }
 });
-insert_sql = util.format(sqlTemplate, values.join(','));
-dbCreateString += insert_sql + ';';
-
-if (generateSqlFile) {
-    fs.writeFile(path.join(__dirname, 'result.sql'), dbCreateString, function (err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("The file was saved!");
-    });
-}
-else {
-    connection.query(dbCreateString, function (err, rows, fields) {
-        if (err) throw err;
-        console.log('Completed.');
-        connection.end();
-    });
-}
