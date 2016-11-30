@@ -9,21 +9,21 @@ export class PhraseService {
 
     }
     getPhrase() {
-        return this.http.get(this.phraseUrl).map(r => r.json());
+        return this.http.get(this.phraseUrl).toPromise().then(r => r.json());
     }
 
     getAllSentence(){
-        return this.http.get('api/v1/allSentence').map(r => r.json());
+        return this.http.get('api/v1/allSentence').toPromise().then(r => r.json());
     }
 
     getAllPhrases() {
-        return this.http.get('api/v1/allphrases').map(r => r.json());
+        return this.http.get('api/v1/allphrases').toPromise().then(r => r.json());
     }
 
     insertExample(phraseId, example) {
         return this.http.post(this.phraseUrl, {
             phraseId: phraseId,
             sentence: example
-        }).map(r => r.json());
+        }).toPromise().then(r => r.json());
     }
 }

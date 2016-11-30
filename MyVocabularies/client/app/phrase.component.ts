@@ -24,7 +24,7 @@ export class PhraseComponent {
         this.showMeaning = false;
         this.showAddExample=false;
         this.showNext = false;
-        this.phraseService.getPhrase().subscribe(data => {
+        this.phraseService.getPhrase().then(data => {
             this.phrase = data;
             this.play();
         });
@@ -62,7 +62,7 @@ export class PhraseComponent {
     }
 
     addExample() {
-        this.phraseService.insertExample(this.phrase.phrase_id, this.example).subscribe(data => {
+        this.phraseService.insertExample(this.phrase.phrase_id, this.example).then(data => {
             console.log(data);
         })
     }

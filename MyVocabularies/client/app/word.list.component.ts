@@ -12,7 +12,7 @@ export class WordListComponent {
     }
 
     ngOnInit() {
-        this.phraseService.getAllPhrases().subscribe(data => {
+        this.phraseService.getAllPhrases().then(data => {
             this.allPhrases = data;
         })
     }

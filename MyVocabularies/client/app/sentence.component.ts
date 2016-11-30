@@ -18,7 +18,7 @@ export class SentenceComponent {
     }
 
     ngOnInit() {
-        this.phraseService.getAllSentence().subscribe(data => {
+        this.phraseService.getAllSentence().then(data => {
             this.vocabularies = data;
         });
     }
