@@ -26,10 +26,20 @@ class Dal {
         });
     }
 
-    getPhrase() {
-        return this.queryManager.executor(this.queryManager.queries.GetARandomPhrase, null, null).then((rows) => {
-            let phrase = rows[1][0];
-            phrase.sentences = _.map(rows[2], 'sentence');
+    getPhrase(id) {
+        let query = null;
+        let parameters = null;
+        if (!id) {
+            query = this.queryManager.queries.GetARandomPhrase;
+        }
+        else {
+            query = this.queryManager.queries.GetPhrase;
+            parameters = { id: id };
+        }
+
+        return this.queryManager.executor(query, parameters, null).then((rows) => {
+            let phrase = rows[0][0];
+            phrase.sentences = _.map(rows[1], 'sentence');
             return Promise.resolve(phrase);
         }, (err) => {
             return Promise.reject(err);

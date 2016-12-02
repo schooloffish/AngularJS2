@@ -12,7 +12,7 @@ class Phrase {
     expressRouter() {
         let router = express.Router();
 
-        router.get('/phrase', _.bind(this.getPhrases, this));
+        router.get('/phrase/:id', _.bind(this.getPhrases, this));
         router.get('/allphrases', _.bind(this.getAllPhrases, this));
         router.get('/allSentence', _.bind(this.getAllSentence, this));
         router.post('/phrase', _.bind(this.insertSentence, this));
@@ -29,7 +29,7 @@ class Phrase {
     }
 
     getPhrases(req, res) {
-        this.dal.getPhrase().then((result) => {
+        this.dal.getPhrase(+req.params.id).then((result) => {
             return res.status(200).json(result);
         }, (err) => {
             return res.sendStatus(500);

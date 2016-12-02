@@ -8,13 +8,13 @@ import {PhraseComponent} from './phrase.component';
 import {SentenceComponent} from './sentence.component';
 import {WordListComponent} from './word.list.component';
 import {PhraseService} from './phrase.service';
-import {routing} from './app.routes';
+import {AppRoutingModule} from './app.routes';
 
 @NgModule({
     imports: [BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,

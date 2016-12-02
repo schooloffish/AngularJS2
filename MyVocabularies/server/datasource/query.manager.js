@@ -12,6 +12,9 @@ let queryCache = {
     GetARandomPhrase: {
         text: 'set @id=(SELECT phrase_id FROM phrase ORDER BY RAND() LIMIT 1);SELECT * FROM phrase where phrase_id=@id;select sentence from example where phrase_id=@id;'
     },
+    GetPhrase: {
+        text: 'SELECT * FROM phrase where phrase_id=@id;select sentence from example where phrase_id=@id;'
+    },
     InsertSentence: {
         text: 'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
     },
@@ -76,7 +79,10 @@ class QueryManager {
                         if (err) {
                             console.log('Error: %s', err.toString());
                         }
-                        resolve(rows);
+                        let actualRows = _.filter(rows, (row) => {
+                            return row.constructor.name !== 'OkPacket';
+                        });
+                        resolve(actualRows);
                     });
                 });
             });

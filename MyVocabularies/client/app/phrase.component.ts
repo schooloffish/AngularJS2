@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhraseService } from './phrase.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
     selector: 'phrase',
@@ -13,20 +15,24 @@ export class PhraseComponent {
     keycode: any;
     example: string;
     showNext: boolean;
-    showAddExample:boolean;
-    constructor(private phraseService: PhraseService) {
+    showAddExample: boolean;
+    constructor(private phraseService: PhraseService,
+        private route: ActivatedRoute,
+        private router: Router) {
         this.title = '';
         this.phrase = {};
         this.audio = new Audio();
         this.example = '';
     }
     ngOnInit() {
-        this.showMeaning = false;
-        this.showAddExample=false;
-        this.showNext = false;
-        this.phraseService.getPhrase().then(data => {
-            this.phrase = data;
-            this.play();
+        let id = this.route.params.subscribe((params) => {
+            this.showMeaning = false;
+            this.showAddExample = false;
+            this.showNext = false;
+            this.phraseService.getPhrase(params['id']).then(data => {
+                this.phrase = data;
+                this.play();
+            });
         });
     }
 
