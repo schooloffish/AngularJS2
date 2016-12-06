@@ -1,0 +1,36 @@
+<h1>Simple Form Validation</h1>
+
+    <form #heroForm="ngForm" *ngIf="active" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="hero.name" name="name" required #name="ngModel" minlength="9"
+                maxlength="20" width="50%">
+            <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+                <div [hidden]="!name.errors.required">
+                    Name is required
+                </div>
+                <div [hidden]="!name.errors.minlength">
+                    Name must be at least 9 characters long.
+                </div>
+                <div [hidden]="!name.errors.maxlength">
+                    Name cannot be more than 20 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label><br>
+            <input type="number" step="1" min="0" max="120" id="age" [(ngModel)]="hero.age" name="ag" required #age="ngModel">
+            <div *ngIf="age.errors && (age.dirty || age.touched)" class="alert alert-danger">
+                <div [hidden]="!age.errors.required">
+                    Age is required
+                </div>
+                <div [hidden]="!age.errors.min">
+                    Age at least 0.
+                </div>
+                <div [hidden]="!age.errors.max">
+                    Age 120 long.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default" (click)="ok()" [disabled]="!heroForm.form.valid">OK</button>
+    </form>

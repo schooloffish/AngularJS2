@@ -1,0 +1,19 @@
+<h1>Template-Driven Forms with validation messages in code</h1>
+<form #heroForm="ngForm" *ngIf="active" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="hero.name" name="name" required minlength="9"
+            maxlength="20" width="50%">
+        <div *ngIf="formErrors.name" class="alert alert-danger">
+            {{ formErrors.name }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label><br>
+        <input type="number" step="1" min="1" max="120" id="age" pattern="[0-9]{1,3}" [(ngModel)]="hero.age" name="age" required >
+        <div *ngIf="formErrors.age" class="alert alert-danger">
+            {{ formErrors.age }}
+        </div>
+    </div>
+    <button class="btn btn-default" (click)="ok()" [disabled]="!heroForm.form.valid">OK</button>
+</form>
