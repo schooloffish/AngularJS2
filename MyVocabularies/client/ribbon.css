@@ -1,0 +1,61 @@
+.ribbon {
+    font-family: Tahoma, Geneva, sans-serif !important;
+    padding: 5px;
+    background: linear-gradient(rgba(136, 136, 136, 0.5), rgba(102, 102, 102, 0.5)) repeat scroll 0% 0% transparent;
+    border-bottom: 1px solid #4e4e4e;
+    -webkit-box-shadow: #4e4e4e 0px 1px 3px;
+    -moz-box-shadow: #4e4e4e 0px 1px 3px;
+    box-shadow: #4e4e4e 0px 1px 3px;
+}
+
+.ribbon-hidden {
+	display: none;
+}
+
+.ribbon-item {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    padding: 0 2px 0 2px;
+}
+
+.ribbon-item-label {
+    color:#ffffff;
+    font-family: Tahoma, Geneva, sans-serif !important;
+    font-size: 11px
+}
+
+.ribbon-item img {
+    margin-top:3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 32px;
+    width: 32px;
+}
+
+.ribbon-item p {
+    font-size: .75em;
+    margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.ribbon-item a:hover {
+	text-decoration: none;
+}
+
+.ribbon-group-divider {
+    border-right: 1px solid rgb(91, 98, 108);
+    border-left: 1px solid rgb(160, 160, 160);
+    margin: 0 10px 0 10px;
+    height: 68px;
+    width: 0;
+    display: inline-block;
+    vertical-align: top;
+	z-index: 0;
+}
+
+.ribbon-item-disabled {
+    opacity: 0.25;
+}

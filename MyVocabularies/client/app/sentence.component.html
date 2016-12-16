@@ -2,6 +2,6 @@
 <ol>
     <li *ngFor="let vocabulary of vocabularies">
         <span>{{vocabulary}}</span>
-        <a href="#" (click)="play(vocabulary)" (mouseover)="play(vocabulary)"><img src="app/images/speaker.png" alt=""></a>
+        <a href="#" (click)="play(vocabulary)" (mouseover)="play(vocabulary)"><img src="{{icon}}" alt=""></a>
     </li>
 </ol>

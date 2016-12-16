@@ -1,0 +1,9 @@
+<div *ngIf="group.type=='group'" class="ribbon-block left">
+    <span *ngFor="let item of group.items">
+        <ribbon-item [item]="item">
+        </ribbon-item>
+    </span>
+    <p class="text-center" style="padding-top: 10px;color:#bbbbbb" >{{group.title}}</p>
+</div>
+
+<div *ngIf="group.type=='separator'" class="ribbon-group-divider left"></div>

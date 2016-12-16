@@ -12,9 +12,11 @@ export class SentenceComponent {
     vocabularies = ['The potato was hot, so I fumbled and dropped it.haha',
         'Writing such push/pull logic by hand is tedious, error-prone, and a nightmare to read as any experienced jQuery programmer can attest.'];
     audio; any;
+    icon:string;
 
     constructor(private phraseService: PhraseService) {
         this.audio = new Audio();
+        this.icon='app/images/speaker.png';
     }
 
     ngOnInit() {

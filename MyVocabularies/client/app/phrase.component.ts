@@ -15,7 +15,8 @@ export class PhraseComponent {
     keycode: any;
     example: string;
     showNext: boolean;
-    showAddExample: boolean;
+    showAddExample: boolean;    
+
     constructor(private phraseService: PhraseService,
         private route: ActivatedRoute,
         private router: Router) {

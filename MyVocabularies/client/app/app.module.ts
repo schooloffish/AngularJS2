@@ -11,7 +11,10 @@ import { PhraseService } from './phrase.service';
 import { AppRoutingModule } from './app.routes';
 import { SimpleValidationFormComponent } from './simple.validation.form.component';
 import { MessagesValidationFormComponent } from './messages.validation.form.component';
-
+import { RibbonBarComponent } from './ribbon/ribbon.bar.component';
+import { RibbonTabComponent } from './ribbon/ribbon.tab.component';
+import { RibbonItemComponent } from './ribbon/ribbon.item.component';
+import { RibbonGroupComponent } from './ribbon/ribbon.group.component';
 
 @NgModule({
     imports: [BrowserModule,
@@ -25,7 +28,11 @@ import { MessagesValidationFormComponent } from './messages.validation.form.comp
         SentenceComponent,
         WordListComponent,
         SimpleValidationFormComponent,
-        MessagesValidationFormComponent
+        MessagesValidationFormComponent,
+        RibbonBarComponent,
+        RibbonTabComponent,
+        RibbonItemComponent,
+        RibbonGroupComponent
     ],
     providers: [
         PhraseService,

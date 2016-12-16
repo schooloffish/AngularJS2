@@ -1,0 +1,15 @@
+<!--<button>
+    {{item.title}}
+</button>-->
+
+<div *ngIf="item.type!='separator'" class="ribbon-item ng-scope ribbon-icon-yellow-hover ribbon-item-disabled">
+    <a href="javascript:void(0);">
+        <span *ngIf="item.icon">
+            <img [src]="item.icon" class="ribbon-item-icon">
+            </span>
+
+        <p class="text-center ribbon-item-label ng-binding ng-scope">{{item.title}}</p>
+    </a>
+</div>
+
+<div *ngIf="item.type=='separator'" class="ribbon-group-divider"></div>
