@@ -1,8 +1,10 @@
 <div class="row ribbon  tab-bar" style="padding: 3px">
-    <ribbon-tab *ngFor="let tab of tabs" [tab]="tab" (tabClicked)="tabClicked($event)">
-    </ribbon-tab>
+<ribbon-tab *ngFor="let tab of tabs" [tab]="tab" (tabClicked)="tabClicked($event)">
+</ribbon-tab>
 </div>
 <div class="row ribbon">
-    <ribbon-group *ngFor="let item of activeTab.items" [group]="item">
+    <ribbon-group *ngFor="let item of activeTab.groups" [group]="item">
     </ribbon-group>
+    <ribbon-item *ngFor="let item of activeTab.items" [item]="item">
+    </ribbon-item>
 </div>

@@ -1,15 +1,39 @@
-<!--<button>
-    {{item.title}}
-</button>-->
-
-<div *ngIf="item.type!='separator'" class="ribbon-item ng-scope ribbon-icon-yellow-hover ribbon-item-disabled">
+<div *ngIf="item.type=='button'" class="ribbon-item ribbon-icon-yellow-hover">
     <a href="javascript:void(0);">
         <span *ngIf="item.icon">
             <img [src]="item.icon" class="ribbon-item-icon">
             </span>
 
-        <p class="text-center ribbon-item-label ng-binding ng-scope">{{item.title}}</p>
+        <p class="text-center ribbon-item-label">{{item.title}}</p>
     </a>
 </div>
 
 <div *ngIf="item.type=='separator'" class="ribbon-group-divider"></div>
+
+<div *ngIf="item.type=='text'" class="ribbon-item" style="border-radius: 8px;">
+<span style="color: white;margin: 8px;" [innerHtml]="item.title" ></span>
+</div>
+
+<div *ngIf="item.type=='dropdown'">
+    <div class="ribbon-item ribbon-icon-yellow-hover" ngbDropdown [open]="isOpen">
+        <a href="javascript:void(0);">
+            <span *ngIf="item.icon" ngbDropdownToggle>
+            <img [src]="item.icon" class="ribbon-item-icon">
+            </span>
+            <span (click)="$event.stopPropagation();isOpen=!isOpen;">
+                <p class="text-center ribbon-item-label">{{item.title}}</p>
+                <span class="caret"></span>
+            </span>
+        </a>
+    </div>
+
+    <div ngbDropdown [open]="isOpen">
+        <div class="dropdown-menu">
+            <div *ngFor="let dropdownItem of item.items" class="dropdown-item" >
+                <a href="javascript:void(0);" (click)="dropdownItem.click();">
+                {{dropdownItem.title}}
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
