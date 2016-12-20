@@ -1,0 +1,55 @@
+<div *ngIf="item.type=='applicationText'" class="ribbon-item" style="margin: 7px 5px -5px 5px;">
+<p class="text-center ribbon-item-label">{{item.title}}</p>
+</div>
+
+<!--<div *ngIf="item.type=='applicationDropdown'" class="ribbon-item">
+    <span>
+          <a href="">
+              <div class="nonSelected">
+                  <img *ngIf="item.icon" [src]="item.icon">
+                  <p *ngIf="item.title" class="text-center ribbon-item-label">{{item.title}}</p>
+              </div>
+          </a>
+          <div ng-show="$ctrl.isOpen" class="" style="border:1px solid #000000;position: absolute;background-color: #333;width:200px;left:-100px;z-index:1000;">
+<ul class="list-inline">
+    <li ng-repeat="item in $ctrl.items" ng-if="!item.isCollapsed" class="ng-scope">
+        <a href="" ng-click="item.click()">
+            <div ng-class="{true:'selected',false:'nonSelected'}[item.isChecked]" class="nonSelected">
+                <img ng-src="assets/images/icons/file/fullscreen.png" src="assets/images/icons/file/fullscreen.png">
+            </div>
+        </a>
+    </li>
+</ul>
+</div>
+</span>
+</div>-->
+
+<div *ngIf="item.type=='applicationDropdown'" class="ribbon-item">
+    <a href="javascript:void(0);">
+        <div ngbDropdown [open]="isOpen">
+            <button style="background: transparent;border:none;margin:0;padding:0;" class="text-center ribbon-item-label" ngbDropdownToggle>
+<img [src]="item.icon" class="ribbon-item-icon">
+</button>
+<div class="dropdown-menu">
+    <div *ngFor="let dropdownItem of item.items" class="dropdown-item" style="display:inline-block">
+<a href="javascript:void(0);" (click)="dropdownItem.click();">
+    <img [src]="dropdownItem.icon" class="ribbon-item-icon">
+</a>
+</div>
+</div>
+</div>
+</a>
+</div>
+
+
+
+<div *ngIf="item.type=='applicationButton'" class="ribbon-item">
+    <span>
+          <a href="javascript:void(0);" (click)="item.click();">
+              <div class="{{item.class}}">
+                  <img *ngIf="item.icon" [src]="item.icon">
+                  <p *ngIf="item.title" class="text-center ribbon-item-label">{{item.title}}</p>
+              </div>
+          </a>
+    </span>
+</div>

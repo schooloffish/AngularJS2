@@ -309,6 +309,10 @@ body {
     margin-left: 0px;
 }
 
+.mar-t-10{
+    margin-top:10px;
+}
+
 .disable-float {
     float: none
 }

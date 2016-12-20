@@ -2,8 +2,7 @@
     <a href="javascript:void(0);">
         <span *ngIf="item.icon">
             <img [src]="item.icon" class="ribbon-item-icon">
-            </span>
-
+            </span><br>
         <p class="text-center ribbon-item-label">{{item.title}}</p>
     </a>
 </div>
@@ -14,26 +13,26 @@
 <span style="color: white;margin: 8px;" [innerHtml]="item.title" ></span>
 </div>
 
-<div *ngIf="item.type=='dropdown'">
-    <div class="ribbon-item ribbon-icon-yellow-hover" ngbDropdown [open]="isOpen">
-        <a href="javascript:void(0);">
-            <span *ngIf="item.icon" ngbDropdownToggle>
+<div *ngIf="item.type=='dropdown'" style="display:inline-block">
+<div class="ribbon-item ribbon-icon-yellow-hover">
+    <a href="javascript:void(0);">
+        <span *ngIf="item.icon">
             <img [src]="item.icon" class="ribbon-item-icon">
             </span>
-            <span (click)="$event.stopPropagation();isOpen=!isOpen;">
-                <p class="text-center ribbon-item-label">{{item.title}}</p>
-                <span class="caret"></span>
-            </span>
+        <br>
+        <div ngbDropdown [open]="isOpen">
+            <button style="background: transparent;border:none;margin:0;padding:0;" class="text-center ribbon-item-label" ngbDropdownToggle> {{item.title}}
+<span class="caret"></span>
+</button>
+<div class="dropdown-menu">
+    <div *ngFor="let dropdownItem of item.items" class="dropdown-item">
+        <a href="javascript:void(0);" (click)="dropdownItem.click();">
+            <img [src]="dropdownItem.icon" class="ribbon-item-icon"> {{dropdownItem.title}}
         </a>
     </div>
+</div>
+</div>
+</a>
+</div>
 
-    <div ngbDropdown [open]="isOpen">
-        <div class="dropdown-menu">
-            <div *ngFor="let dropdownItem of item.items" class="dropdown-item" >
-                <a href="javascript:void(0);" (click)="dropdownItem.click();">
-                {{dropdownItem.title}}
-            </a>
-            </div>
-        </div>
-    </div>
 </div>
