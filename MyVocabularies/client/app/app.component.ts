@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RibbonBarService } from './ribbon/ribbon.bar.service';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'my-app',
@@ -15,7 +16,11 @@ export class AppComponent {
         let myTabs = [{
             title: 'file', type: 'tab', groups: [{
                 title: 'group 1', items: [
-                    { title: 'item 1', icon: 'app/images/dashboard_bucket.png', type: 'button' },
+                    {
+                        title: 'item 1', icon: 'app/images/dashboard_bucket.png', type: 'button', click: () => {
+                            console.log(_);
+                        }
+                    },
                     { title: 'item 2', icon: 'app/images/dashboard_map.png', type: 'button' },
                     {
                         name: 'dashboardItem',
