@@ -18,10 +18,33 @@ export class AppComponent {
                     { title: 'item 1', icon: 'app/images/dashboard_bucket.png', type: 'button' },
                     { title: 'item 2', icon: 'app/images/dashboard_map.png', type: 'button' },
                     {
+                        name: 'dashboardItem',
                         title: 'dropdown', icon: 'app/images/dashboard_map.png', type: 'dropdown', items: [
-                            { title: 'dropdown 1', icon: 'app/images/dashboard_bucket.png', click: () => { alert('1'); } },
-                            { title: 'dropdown 2', icon: 'app/images/dashboard_office.png', click: () => { alert('1'); } },
-                            { title: 'dropdown 3', icon: 'app/images/dashboard_worker.png', click: () => { alert('1'); } }
+                            {
+                                name: 'bucketModeItem',
+                                title: 'dropdown 1', icon: 'app/images/dashboard_bucket.png', click: () => {
+                                    // consider put all the ribbon tabs/items into service, and then change items' title/icon via service like what we did in current fc
+                                    let target = this.ribbonBarService.findTabItem('dashboardItem');
+                                    target.title = 'dropdown 1';
+                                    target.icon = 'app/images/dashboard_bucket.png';
+                                }
+                            },
+                            {
+                                name: 'officeModeItem',
+                                title: 'dropdown 2', icon: 'app/images/dashboard_office.png', click: () => {
+                                    let target = this.ribbonBarService.findTabItem('dashboardItem');
+                                    target.title = 'dropdown 2';
+                                    target.icon = 'app/images/dashboard_office.png';
+                                }
+                            },
+                            {
+                                name: 'workerModeItem',
+                                title: 'dropdown 3', icon: 'app/images/dashboard_worker.png', click: () => {
+                                    let target = this.ribbonBarService.findTabItem('dashboardItem');
+                                    target.title = 'dropdown 3';
+                                    target.icon = 'app/images/dashboard_worker.png';
+                                }
+                            }
                         ]
                     }],
                 type: 'group'
