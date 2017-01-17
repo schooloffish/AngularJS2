@@ -9,8 +9,8 @@
 <img [src]="item.icon" class="ribbon-item-icon">
 </button>
 <div class="dropdown-menu">
-    <div *ngFor="let dropdownItem of item.items" class="dropdown-item" style="display:inline-block">
-<a href="javascript:void(0);" (click)="dropdownItem.click();">
+    <div *ngFor="let dropdownItem of item.items" class="dropdown-item" style="display:inline-block" (click)="dropdownItem.click();">
+<a href="javascript:void(0);">
     <img [src]="dropdownItem.icon" class="ribbon-item-icon">
 </a>
 </div>
@@ -21,7 +21,7 @@
 
 <div *ngIf="item.type=='applicationButton'" class="ribbon-item">
     <span>
-          <a href="javascript:void(0);" (click)="item.click();">
+          <a href="javascript:void(0);" (click)="item.click&&item.click();">
               <div class="{{item.class}}">
                   <img *ngIf="item.icon" [src]="item.icon">
                   <p *ngIf="item.title" class="text-center ribbon-item-label">{{item.title}}</p>

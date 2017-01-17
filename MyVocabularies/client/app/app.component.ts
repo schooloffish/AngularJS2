@@ -9,7 +9,6 @@ import * as _ from 'lodash';
 export class AppComponent {
     title = 'My New Vocabularies';
     constructor(private ribbonBarService: RibbonBarService) {
-
     }
 
     ngOnInit() {
@@ -18,7 +17,7 @@ export class AppComponent {
                 title: 'group 1', items: [
                     {
                         title: 'item 1', icon: 'app/images/dashboard_bucket.png', type: 'button', click: () => {
-                            console.log(_);
+                            console.log(`lodash version: ${_.VERSION}`);
                         }
                     },
                     { title: 'item 2', icon: 'app/images/dashboard_map.png', type: 'button' },
