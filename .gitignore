@@ -1,3 +1,5 @@
 *.js.map
 Express AngularJs1 GetStarted/node_modules
 Express AngularJs1 GetStarted/public/bower_components
+*.pyc
+microblog/flask/*
