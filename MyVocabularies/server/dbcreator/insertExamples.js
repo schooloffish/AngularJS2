@@ -26,22 +26,31 @@ let insert_sql;
 
 let txtFilePath = path.join(__dirname, 'examples.txt');
 
-var lineReader = require('readline').createInterface({
+let lineReader = require('readline').createInterface({
     input: require('fs').createReadStream(txtFilePath)
 });
-
-lineReader.on('line', function (line) {
+let lineNumber = 0;
+lineReader.on('line', function (line, a, b) {
     let array = line.split('|');
     let phrase = array[0];
     let example = array[1];
-    queryManager.executor({ text: 'SELECT phrase_id FROM phrase WHERE phrase=@phrase;' }, { phrase: phrase }, null).then(data => {
+    queryManager.executor({
+        text: 'SELECT phrase_id FROM phrase WHERE phrase=@phrase;'
+    }, {
+        phrase: phrase
+    }, null).then(data => {
         if (data && data.length) {
             let phraseId = data[0].phrase_id;
-            return queryManager.executor({ text: 'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());' }, { phraseId: phraseId, sentence: example }, null);
+            return queryManager.executor({
+                text: 'insert example (phrase_id,sentence,last_update_timestamp) values (@phraseId,@sentence,now());'
+            }, {
+                phraseId: phraseId,
+                sentence: example
+            }, null);
         }
-        return Promise.reject(new Error(`Phrase ${phrase} is not found in db.`));
+        return Promise.reject(new Error(`Phrase '${phrase}' is not found in db.`));
     }).then(data => {
-        console.log('insert successfully.');
+        console.log('line %s insert successfully.', ++lineNumber);
     }, err => {
         console.log(`failed to insert, error: ${err.message}`);
     });

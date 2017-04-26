@@ -31,5 +31,6 @@ export class SentenceComponent {
         this.audio.pause();
         this.audio.src = `http://dict.youdao.com/dictvoice?audio=${phrase}&type=2`;
         this.audio.play();
+        return false;
     }
 }

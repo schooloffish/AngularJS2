@@ -18,7 +18,7 @@ unforeseen|I expect the fix will not be that difficult and Leo should be able to
 exceed|It's 23MB which exceeds the Jira 20MB limit.
 time consuming|This is time consuming and error prone.
 hand this off|As of right now, I need to hand this off for you to work on Monday.
-mixe around|I also noticed the TenantPhotoSubject and TenantPhotoComments are mixed around.
+mix around|I also noticed the TenantPhotoSubject and TenantPhotoComments are mixed around.
 seem to remember|I seem to remember making this change to the old consumer? Or maybe I'm not remembering right. Do you remember us fixing this before with the old schema?
 result in|Sending a workorder to QC in FieldCheck will result in you receiving an email from the producer
 fill in|I can fill you in on more of the details some other day.
@@ -205,7 +205,7 @@ boarding school|I went to a boarding school.
 for good|You're leaving? for good?
 initiative|Take the initiative. You'll be rewarded for it.
 villain|Every villain has his Achilles' heel.
-Achilles' heel|Every villain has his Achilles' heel.
+Achilles` heel|Every villain has his Achilles' heel.
 deport|The government must deport those illegal aliens.
 sounds like a winner|Sounds like a winner! Let's do it.
 give somebody a ride|Can you give me a ride?
@@ -226,3 +226,17 @@ feudal|Nate and Ray are lost in feudal japan.
 bias|Do not push your political beliefs and bias on to your students.
 ballot|He tweeted out a picture of his filled-in ballot with the caption.
 veteran|Our nation should take care of veteran.
+spoiler|The new Home Land is coming, no spoilers, please.
+take into consideration|I think we should take the retention period into consideration just to be safe.
+punch list|I wanted to start a punch-list of tasks that we’ll be focusing on in order to get into production.
+Give a think on it|Give a think on it.
+overall|I've done some testing today and overall it's working very well.
+worth considering|So if this matches the query patterns of your application, the multi-column index approach is worth considering
+fill the gap with|Node.js filled this gap with the CommonJS module format
+take precedence|These core modules will always take precedence in the loading algorithm.
+under the hood|Curious, I dug into Node core to find out what was happening under the hood
+the tip of the iceberg|require(), it turned out, was just the tip of the iceberg.
+out of habit|but I do it out of habit.
+other than that|Leo, I did have a question for you on 2134.  But other than that I think I want  you guys to start investigating openlayers v4 and working on some openlayers v3 and v4 samples and tutorials
+intend|I just want to double check to make sure it was intended.
+swamp|I was swamped on non-FC work today.
