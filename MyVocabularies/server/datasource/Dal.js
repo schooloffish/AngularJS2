@@ -19,14 +19,21 @@ class Dal {
     }
 
     getAllSentence() {
-        return this.queryManager.executor(this.queryManager.queries.GetAllSentence, null, null).then(rows => {
-            return Promise.resolve(_.map(rows, 'sentence'));
-        }, err => {
+        return Phrase.all().then(function (all) {
+            return Promise.resolve(
+                all.map((item) => {
+                    return item.sentence;
+                })
+            );
+        }).catch((err) => {
             return Promise.reject(err);
         });
     }
 
     getPhrase(id) {
+
+        
+
         let query = null;
         let parameters = null;
         if (!id) {
