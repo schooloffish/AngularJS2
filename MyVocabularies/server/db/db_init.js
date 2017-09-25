@@ -6,58 +6,8 @@ let _ = require('lodash');
 let util = require('util');
 let parseString = require('xml2js').parseString;
 
-let Sequelize = require('Sequelize');
-let sequelize = new Sequelize('main', 'testuser', '123456', {
-    host: 'localhost',
-    dialect: 'sqlite',
-
-    pool: {
-        max: 5,
-        min: 0,
-        idle: 10000
-    },
-    // SQLite only
-    storage: './test.sqlite'
-});
-
-let Phrase = sequelize.define('phrase', {
-    phrase: {
-        type: Sequelize.STRING,
-        field: 'phrase'
-    },
-    phonetic: {
-        type: Sequelize.STRING,
-        field: 'phonetic'
-    },
-    meaning: {
-        type: Sequelize.STRING,
-        field: 'meaning'
-    },
-    correctness: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        field: 'correctness'
-    },
-    incorrectness: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        field: 'incorrectness'
-    }
-});
-
-let Example = sequelize.define('example', {
-    phraseId: {
-        type: Sequelize.INTEGER,
-        references: {
-            model: Phrase,
-            key: 'id'
-        }
-    },
-    sentence: {
-        type: Sequelize.STRING,
-        field: 'sentence'
-    }
-});
+let Phrase = require('../Models.js').Phrase;
+let Example = require('../Models.js').Example;
 
 /*
 * init phrases
