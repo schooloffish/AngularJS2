@@ -1,3 +1,4 @@
+let path = require('path');
 let Sequelize = require('Sequelize');
 let sequelize = new Sequelize('main', 'testuser', '123456', {
     host: 'localhost',
@@ -9,7 +10,7 @@ let sequelize = new Sequelize('main', 'testuser', '123456', {
         idle: 10000
     },
     // SQLite only
-    storage: './test.sqlite'
+    storage: path.join(__dirname, 'test.sqlite')
 });
 
 let Phrase = sequelize.define('phrase', {

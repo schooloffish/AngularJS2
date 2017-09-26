@@ -1,14 +1,12 @@
 'use strict';
 
 let _ = require('lodash');
-let Dal = require('../datasource/Dal.js');
-let Phrase = require('../db/Models').Phrase;
-let Example = require('../db/Models').Example;
+let PhraseModel = require('../db/Models').Phrase;
+let ExampleModel = require('../db/Models').Example;
 let express = require('express');
 
 class Phrase {
     constructor() {
-        this.dal = new Dal();
     }
 
     expressRouter() {
@@ -23,60 +21,51 @@ class Phrase {
     }
 
     getAllSentence(req, res) {
-        Example.all().then((all) => {
-            return res.status(200).json(result);
+        ExampleModel.all().then((all) => {
+            return res.status(200).json(all.map((item) => { return item.sentence; }));
         }).catch((err) => {
             return res.sendStatus(500);
         });
-        // this.dal.getAllSentence().then((result) => {
-        //     return res.status(200).json(result);
-        // }, (err) => {
-        //     return res.sendStatus(500);
-        // });
     }
 
     getPhrases(req, res) {
-        Phrase.findOne({
-            where: {
-                id: +req.params.id
-            }
+        let id = +req.params.id;
+        let promise1 = Promise.resolve(id);
+        if (!id) {
+            promise1 = PhraseModel.count().then((count) => {
+                let index = Math.floor(Math.random() * count - 1) + 0
+                return Promise.resolve(index);
+            });
+        }
+
+        promise1.then((id) => {
+            return PhraseModel.findOne({
+                where: {
+                    id: id
+                }
+            });
         }).then((result) => {
             return res.status(200).json(result);
         }).catch((err) => {
             return res.sendStatus(500);
         });
-        // this.dal.getPhrase(+req.params.id).then((result) => {
-        //     return res.status(200).json(result);
-        // }, (err) => {
-        //     return res.sendStatus(500);
-        // });
     }
 
     insertSentence(req, res) {
-        Example.sync({ force: true }).then(() => {
-            Example.create({
+        ExampleModel.sync({ force: true }).then(() => {
+            ExampleModel.create({
                 phraseId: req.body.phraseId,
                 sentence: req.body.sentence
             })
         });
-        // this.dal.insertSentence(req.body).then((result) => {
-        //     return res.status(200).json(result);
-        // }, (err) => {
-        //     return res.sendStatus(500);
-        // });
     }
 
     getAllPhrases(req, res) {
-        Phrase.all((all) => {
-            return res.status(200).json(result);
+        PhraseModel.all().then((all) => {
+            return res.status(200).json(all);
         }).catch((err) => {
             return res.sendStatus(500);
         });
-        // this.dal.getAllPhrases().then((result) => {
-        //     return res.status(200).json(result);
-        // }, (err) => {
-        //     return res.sendStatus(500);
-        // });
     }
 }
 

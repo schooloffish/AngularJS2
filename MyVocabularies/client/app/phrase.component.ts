@@ -25,6 +25,7 @@ export class PhraseComponent {
         this.audio = new Audio();
         this.example = '';
     }
+    
     ngOnInit() {
         let id = this.route.params.subscribe((params) => {
             this.showMeaning = false;

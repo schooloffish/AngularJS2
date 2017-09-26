@@ -6,14 +6,14 @@ let _ = require('lodash');
 let util = require('util');
 let parseString = require('xml2js').parseString;
 
-let Phrase = require('../Models.js').Phrase;
-let Example = require('../Models.js').Example;
+let Phrase = require('./Models.js').Phrase;
+let Example = require('./Models.js').Example;
 
 /*
 * init phrases
 *
 */
-let xmlString = fs.readFileSync('D:\\MyFiles\\Documents\\MyGitHub\\MyVocabularies\\server\\dbcreator\\MyWords_YouDao.xml', 'utf8');
+let xmlString = fs.readFileSync(path.join(__dirname, 'MyWords_YouDao.xml'), 'utf8');
 parseString(xmlString, { explicitArray: false }, (err, result) => {
     Phrase.sync({ force: true }).then(function () {
         let promiseTasks = [];
@@ -43,7 +43,7 @@ parseString(xmlString, { explicitArray: false }, (err, result) => {
 *
 */
 function insertExample() {
-    let txtFilePath = 'D:\\MyFiles\\Documents\\MyGitHub\\MyVocabularies\\server\\dbcreator\\examples.txt';
+    let txtFilePath = path.join(__dirname, 'examples.txt');
 
     let lineReader = require('readline').createInterface({
         input: require('fs').createReadStream(txtFilePath)
