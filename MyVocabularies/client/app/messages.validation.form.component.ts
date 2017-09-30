@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'test-form',
-    templateUrl: 'app/messages.validation.form.component.html'
+    templateUrl: 'messages.validation.form.component.html'
 })
 export class MessagesValidationFormComponent {
     hero = { name: 'liu feifei', age: 3 };

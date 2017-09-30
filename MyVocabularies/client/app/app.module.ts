@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { PhraseComponent } from './phrase.component';
@@ -12,15 +11,9 @@ import { PhraseService } from './phrase.service';
 import { AppRoutingModule } from './app.routes';
 import { SimpleValidationFormComponent } from './simple.validation.form.component';
 import { MessagesValidationFormComponent } from './messages.validation.form.component';
-import { RibbonBarComponent } from './ribbon/ribbon.bar.component';
-import { RibbonTabComponent } from './ribbon/ribbon.tab.component';
-import { RibbonItemComponent } from './ribbon/ribbon.item.component';
-import { RibbonGroupComponent } from './ribbon/ribbon.group.component';
-import { RibbonApplicationItemComponent } from './ribbon/ribbon.application.item.component';
-import { RibbonBarService } from './ribbon/ribbon.bar.service';
 
 @NgModule({
-    imports: [NgbModule.forRoot(),
+    imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
@@ -32,16 +25,10 @@ import { RibbonBarService } from './ribbon/ribbon.bar.service';
         SentenceComponent,
         WordListComponent,
         SimpleValidationFormComponent,
-        MessagesValidationFormComponent,
-        RibbonBarComponent,
-        RibbonTabComponent,
-        RibbonItemComponent,
-        RibbonGroupComponent,
-        RibbonApplicationItemComponent
+        MessagesValidationFormComponent
     ],
     providers: [
-        PhraseService,
-        RibbonBarService
+        PhraseService
     ],
     bootstrap: [AppComponent]
 })

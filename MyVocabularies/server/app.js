@@ -5,7 +5,7 @@ let bodyParser = require('body-parser');
 let path = require('path');
 let app = express();
 
-let clientFolder = path.join(path.dirname(__dirname), 'client')
+let clientFolder = path.join(path.dirname(__dirname), 'client', 'dist');
 console.log(clientFolder);
 
 app.use(bodyParser.json());

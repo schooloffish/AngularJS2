@@ -12,7 +12,7 @@ export class PhraseService {
 
     }
 
-    getPhrase(id) {
+    getPhrase(id:string) {
         return this.http.get(this.phraseUrl + id).toPromise().then(r => r.json());
     }
 
@@ -24,7 +24,7 @@ export class PhraseService {
         return this.http.get(this.allPhraseUrl).toPromise().then(r => r.json());
     }
 
-    insertExample(phraseId, example) {
+    insertExample(phraseId:number, example:string) {
         return this.http.post(this.phraseUrl, {
             phraseId: phraseId,
             sentence: example

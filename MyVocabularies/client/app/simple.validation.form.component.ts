@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'test-form',
-    templateUrl: 'app/simple.validation.form.component.html'
+    templateUrl: 'simple.validation.form.component.html'
 })
 export class SimpleValidationFormComponent {
     heroForm: NgForm;

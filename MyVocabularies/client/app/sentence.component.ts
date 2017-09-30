@@ -6,12 +6,12 @@ import {PhraseService} from './phrase.service'
 
 @Component({
     selector: 'sentence',
-    templateUrl: 'app/sentence.component.html'
+    templateUrl: 'sentence.component.html'
 })
 export class SentenceComponent {
     vocabularies = ['The potato was hot, so I fumbled and dropped it.haha',
         'Writing such push/pull logic by hand is tedious, error-prone, and a nightmare to read as any experienced jQuery programmer can attest.'];
-    audio; any;
+    audio: any;
     icon:string;
 
     constructor(private phraseService: PhraseService) {
@@ -25,9 +25,7 @@ export class SentenceComponent {
         });
     }
 
-    getAllSentence
-
-    play(phrase) {
+    play(phrase:string) {
         this.audio.pause();
         this.audio.src = `http://dict.youdao.com/dictvoice?audio=${phrase}&type=2`;
         this.audio.play();

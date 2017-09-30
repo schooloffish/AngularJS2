@@ -3,7 +3,7 @@ import {PhraseService} from './phrase.service';
 
 @Component({
     selector: 'wordlist',
-    templateUrl: 'app/word.list.component.html'
+    templateUrl: 'word.list.component.html'
 })
 export class WordListComponent {
     allPhrases: string[];

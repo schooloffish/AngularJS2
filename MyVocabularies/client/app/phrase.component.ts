@@ -5,7 +5,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
     selector: 'phrase',
-    templateUrl: 'app/phrase.component.html'
+    templateUrl: 'phrase.component.html'
 })
 export class PhraseComponent {
     phrase: any;
@@ -52,7 +52,7 @@ export class PhraseComponent {
         this.audio.play();
     }
 
-    onKey(event) {
+    onKey(event:any) {
         if (event.code === 'ArrowRight') {
             this.next();
         }
