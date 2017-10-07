@@ -16,7 +16,7 @@ export class SentenceComponent {
 
     constructor(private phraseService: PhraseService) {
         this.audio = new Audio();
-        this.icon='app/images/speaker.png';
+        this.icon='app/assets/images/speaker.png';
     }
 
     ngOnInit() {

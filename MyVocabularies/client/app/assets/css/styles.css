@@ -8,9 +8,9 @@ body {
     background-color: #50515d;
 }
 
-.bkimg {
-    background-image: url(../images/non-production_bkgd.png);
-}
+/*.bkimg {
+    background-image: url(.app/assets/images/non-production_bkgd.png);
+}*/
 
 .page-fill {
     position: relative;

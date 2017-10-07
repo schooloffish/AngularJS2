@@ -3,7 +3,4 @@
 /client/node_modules/
 /.idea/
 *.log
-/client/app/*.js
-/client/app/*.js.map
-/client/app/*/*.js
-/client/app/*/*.js.map
+/client/dist/
